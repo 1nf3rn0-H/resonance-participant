@@ -1,0 +1,10 @@
+{
+  "v03": {
+    "algorithm_version": "music-episode-surfacing-0.3.0",
+    "source_sha256": "74bc63322bb836ba3b19c0a3875168261973f52c7f2f3a31cdb2c73a47f47be1"
+  },
+  "ped": {
+    "algorithm_version": "music-episode-surfacing-0.5.1",
+    "source_sha256": "0ef6e833d97ba47f633117e957680f55650259ddf17e7124ed78dddc3243a702"
+  }
+}

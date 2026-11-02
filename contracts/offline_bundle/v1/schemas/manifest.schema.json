@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:resonance:manifest:1.0.0",
+  "type": "object",
+  "properties": {
+    "format": {
+      "const": "resonance-bundle"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "bundle_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "study_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "participant_pseudonym": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "protocol_version": {
+      "const": "offline-retro-mvp-1.0.0-draft"
+    },
+    "temporal_mode": {
+      "const": "RETROSPECTIVE_REPLAY"
+    },
+    "trial_type": {
+      "enum": [
+        "THREE_ARM_PILOT",
+        "FEASIBILITY_ONLY"
+      ]
+    },
+    "app_release": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+    },
+    "previous_bundle_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "export_scope": {
+      "enum": [
+        "RESPONSES_ONLY",
+        "HISTORY_AND_RESPONSES"
+      ]
+    },
+    "question_bank_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "sampling_config_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "integrity_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "test_only": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "format",
+    "schema_version",
+    "bundle_id",
+    "study_id",
+    "participant_pseudonym",
+    "protocol_version",
+    "temporal_mode",
+    "trial_type",
+    "app_release",
+    "generated_at",
+    "previous_bundle_id",
+    "export_scope",
+    "question_bank_hash",
+    "sampling_config_hash",
+    "content_hash",
+    "integrity_hash",
+    "test_only"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,45 @@
+{
+  "source": "https://www.rfc-editor.org/rfc/rfc8785.html#appendix-B",
+  "samples": [
+    {
+      "ieee754_hex": "0000000000000000",
+      "canonical_json": "0"
+    },
+    {
+      "ieee754_hex": "8000000000000000",
+      "canonical_json": "0"
+    },
+    {
+      "ieee754_hex": "0000000000000001",
+      "canonical_json": "5e-324"
+    },
+    {
+      "ieee754_hex": "8000000000000001",
+      "canonical_json": "-5e-324"
+    },
+    {
+      "ieee754_hex": "7fefffffffffffff",
+      "canonical_json": "1.7976931348623157e+308"
+    },
+    {
+      "ieee754_hex": "ffefffffffffffff",
+      "canonical_json": "-1.7976931348623157e+308"
+    },
+    {
+      "ieee754_hex": "4340000000000000",
+      "canonical_json": "9007199254740992"
+    },
+    {
+      "ieee754_hex": "4430000000000000",
+      "canonical_json": "295147905179352830000"
+    },
+    {
+      "ieee754_hex": "44b52d02c7e14af6",
+      "canonical_json": "1e+23"
+    },
+    {
+      "ieee754_hex": "3eb0c6f7a0b5ed8d",
+      "canonical_json": "0.000001"
+    }
+  ]
+}

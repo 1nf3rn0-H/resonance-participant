@@ -1,0 +1,21 @@
+{
+  "name": "@resonance/offline-contract",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Frozen offline retrospective capture contract; contains no private research engine",
+  "exports": {
+    "./canonical": "./canonical.mjs",
+    "./schema": "./schema.mjs",
+    "./questions": "./questions.json",
+    "./sampling": "./sampling.json"
+  },
+  "dependencies": {
+    "canonicalize": "2.1.0",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1"
+  },
+  "private": true,
+  "scripts": {
+    "test": "node selftest.mjs"
+  }
+}

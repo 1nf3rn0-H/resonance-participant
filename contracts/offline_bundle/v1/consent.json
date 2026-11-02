@@ -1,0 +1,17 @@
+{
+  "version": "offline-consent-1.0.0",
+  "status": "DRAFT_PILOT_NOT_APPROVED",
+  "title": "Sharing an offline listening reflection",
+  "statements": [
+    "Importing history and answering questions can happen entirely on this device.",
+    "Nothing is sent automatically. Review the exact export before choosing encrypted sharing.",
+    "You may separately choose whether to share normalized listening history. Responses-only sharing does not include it.",
+    "Your listening history and free-text answers may be sensitive. This study does not diagnose psychological conditions.",
+    "After transfer, deleting local data does not delete researcher-held copies. Contact the study researcher for withdrawal; backup retention and already disseminated anonymous results may limit deletion."
+  ],
+  "default_grants": {
+    "share_responses": false,
+    "share_listening_history": false
+  },
+  "withdrawal_notice_version": "offline-withdrawal-1.0.0"
+}

@@ -1,0 +1,35 @@
+name: Offline participant acceptance
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/participant-browsers
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install and verify before disconnecting
+        run: |
+          ./install.sh
+          npm ci --ignore-scripts
+          npm ci --ignore-scripts --prefix contracts/offline_bundle/v1
+          npx playwright install --with-deps chromium
+          node contracts/offline_bundle/v1/selftest.mjs
+      - name: Run full acceptance with no external network interface
+        run: sudo env "PATH=$PATH" "PLAYWRIGHT_BROWSERS_PATH=$PLAYWRIGHT_BROWSERS_PATH" unshare --net sh scripts/offline_acceptance.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: participant-acceptance-report
+          path: |
+            playwright-report/
+            test-results/

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:resonance:sampling:1.0.0",
+  "const": {
+    "version": "offline-collection-slots-1.0.0",
+    "status": "DRAFT_PILOT",
+    "temporal_mode": "RETROSPECTIVE_REPLAY",
+    "randomization_unit": "PARTICIPANT_COLLECTION_DAY_SLOT",
+    "collection_timezone": "UTC",
+    "max_slots_per_collection_day": 1,
+    "max_followups": 2,
+    "arms": [
+      "RANDOM",
+      "V0_3",
+      "PED"
+    ],
+    "arm_draw": "UNIFORM_AVAILABLE_ARMS",
+    "unavailable_arm_policy": "FEASIBILITY_ONLY",
+    "eligibility": {
+      "version": "historical-disjoint-windows-1.0.0",
+      "session_gap_seconds": 1800,
+      "window_events": 4,
+      "minimum_events": 3,
+      "maximum_span_seconds": 1800,
+      "split_on_historical_utc_day": true
+    },
+    "mapping": {
+      "version": "native-overlap-reciprocal-rank-1.0.0",
+      "membership": "EXACT_EVENT_KEY_OVERLAP",
+      "native_ranking": "DESCENDING_SCORE_THEN_CANDIDATE_KEY",
+      "window_score": "MAX_RECIPROCAL_NATIVE_RANK",
+      "missing_native_match_score": 0,
+      "window_tiebreak": "ASCENDING_WINDOW_KEY"
+    },
+    "native_versions": {
+      "V0_3": "music-episode-surfacing-0.3.0",
+      "PED": "music-episode-surfacing-0.5.1"
+    },
+    "rng": "jcs-sha256-rejection-v1",
+    "collision_policy": "EXCLUDE_PREVIOUSLY_INVITED_OVERLAPPING_EVENT_KEYS_BEFORE_FREEZING_SLOT_FRAME",
+    "probability_basis": "CONDITIONAL_ON_FROZEN_SLOT_FRAME_AND_RECORDED_PRIOR_ASSIGNMENTS",
+    "cumulative_inclusion_probability": null,
+    "seed_policy": "ONE_ENROLLMENT_SEED_COMMITTED_BEFORE_FIRST_NEUTRAL_RESPONSE",
+    "no_source_outcome_or_answer_tuning": true
+  }
+}

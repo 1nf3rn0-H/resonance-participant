@@ -1,0 +1,1389 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:resonance:records:1.0.0",
+  "$defs": {
+    "consent": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "record_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "version": {
+          "const": "offline-consent-1.0.0"
+        },
+        "form_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "accepted_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "grants": {
+          "type": "object",
+          "properties": {
+            "share_responses": {
+              "const": true
+            },
+            "share_listening_history": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "share_responses",
+            "share_listening_history"
+          ],
+          "additionalProperties": false
+        },
+        "withdrawal_notice_version": {
+          "const": "offline-withdrawal-1.0.0"
+        }
+      },
+      "required": [
+        "record_id",
+        "record_hash",
+        "version",
+        "form_hash",
+        "accepted_at",
+        "grants",
+        "withdrawal_notice_version"
+      ],
+      "additionalProperties": false
+    },
+    "history_import": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "record_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "provider": {
+          "enum": [
+            "SPOTIFY",
+            "APPLE_MUSIC"
+          ]
+        },
+        "source_file_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "parser_version": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "actual_imported_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "coverage_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "coverage_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        }
+      },
+      "required": [
+        "record_id",
+        "record_hash",
+        "provider",
+        "source_file_sha256",
+        "parser_version",
+        "actual_imported_at",
+        "coverage_start_at",
+        "coverage_end_at"
+      ],
+      "additionalProperties": false
+    },
+    "track": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "record_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "provider_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "artist": {
+          "type": "string",
+          "maxLength": 1000
+        }
+      },
+      "required": [
+        "record_id",
+        "record_hash",
+        "provider_ref",
+        "title",
+        "artist"
+      ],
+      "additionalProperties": false
+    },
+    "event": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "record_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "import_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "track_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "event_key": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "source_ordinal": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "provider_timestamp_raw": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "provider_timestamp_semantics": {
+          "enum": [
+            "START",
+            "END",
+            "UNKNOWN"
+          ]
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "observed_start_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "observed_end_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "estimated_start_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "estimated_end_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "time_estimation_method": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "time_quality": {
+          "enum": [
+            "OBSERVED",
+            "ESTIMATED",
+            "UNKNOWN"
+          ]
+        },
+        "source_available_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "played_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 86400000
+        },
+        "skipped": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reason_start": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 100
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reason_end": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 100
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shuffle": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "opportunity": {
+          "enum": [
+            "MANUAL",
+            "AUTOPLAY",
+            "SHUFFLE",
+            "UNKNOWN"
+          ]
+        }
+      },
+      "required": [
+        "record_id",
+        "record_hash",
+        "import_id",
+        "track_id",
+        "event_key",
+        "source_ordinal",
+        "provider_timestamp_raw",
+        "provider_timestamp_semantics",
+        "occurred_at",
+        "observed_start_at",
+        "observed_end_at",
+        "estimated_start_at",
+        "estimated_end_at",
+        "time_estimation_method",
+        "time_quality",
+        "source_available_at",
+        "played_ms",
+        "skipped",
+        "reason_start",
+        "reason_end",
+        "shuffle",
+        "opportunity"
+      ],
+      "additionalProperties": false
+    },
+    "episode_snapshot": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "record_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "episode_key": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "historical_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "historical_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "episode_available_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "time_quality": {
+          "enum": [
+            "OBSERVED",
+            "ESTIMATED",
+            "UNKNOWN"
+          ]
+        },
+        "event_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "minItems": 1,
+          "maxItems": 10000
+        },
+        "display_tracks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "maxLength": 1000
+              },
+              "artist": {
+                "type": "string",
+                "maxLength": 1000
+              }
+            },
+            "required": [
+              "title",
+              "artist"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 100
+        },
+        "source_data_status": {
+          "enum": [
+            "INCLUDED",
+            "WITHHELD_UNVERIFIABLE"
+          ]
+        }
+      },
+      "required": [
+        "record_id",
+        "record_hash",
+        "episode_key",
+        "historical_start_at",
+        "historical_end_at",
+        "episode_available_at",
+        "time_quality",
+        "event_refs",
+        "display_tracks",
+        "source_data_status"
+      ],
+      "additionalProperties": false
+    },
+    "eligible_window": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "record_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "episode_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "window_key": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "event_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "minItems": 1,
+          "maxItems": 10000
+        },
+        "eligibility": {
+          "enum": [
+            "ELIGIBLE",
+            "INELIGIBLE"
+          ]
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "COMMON_WINDOW",
+              "TOO_SHORT",
+              "SPAN_TOO_LONG",
+              "AFTER_CUTOFF"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 10
+        }
+      },
+      "required": [
+        "record_id",
+        "record_hash",
+        "episode_id",
+        "window_key",
+        "event_refs",
+        "eligibility",
+        "reasons"
+      ],
+      "additionalProperties": false
+    },
+    "native_candidate": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "record_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "candidate_key": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "arm": {
+          "enum": [
+            "V0_3",
+            "PED"
+          ]
+        },
+        "algorithm_version": {
+          "enum": [
+            "music-episode-surfacing-0.3.0",
+            "music-episode-surfacing-0.5.1"
+          ]
+        },
+        "implementation_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "event_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "minItems": 1,
+          "maxItems": 10000
+        },
+        "score": {
+          "type": "number"
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+          },
+          "minItems": 0,
+          "maxItems": 100
+        },
+        "prediction_as_of_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "training_coverage_end_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "target_outcome_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "native_payload": {
+          "type": "object",
+          "maxProperties": 100
+        }
+      },
+      "required": [
+        "record_id",
+        "record_hash",
+        "candidate_key",
+        "arm",
+        "algorithm_version",
+        "implementation_hash",
+        "event_refs",
+        "score",
+        "reason_codes",
+        "prediction_as_of_at",
+        "training_coverage_end_at",
+        "target_outcome_at",
+        "native_payload"
+      ],
+      "additionalProperties": false
+    },
+    "mapping": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "record_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "window_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "arm": {
+          "enum": [
+            "RANDOM",
+            "V0_3",
+            "PED"
+          ]
+        },
+        "native_candidate_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "mapped_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "record_id",
+        "record_hash",
+        "window_id",
+        "arm",
+        "native_candidate_ids",
+        "mapped_score"
+      ],
+      "additionalProperties": false
+    },
+    "assignment": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "record_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "window_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "collection_day": {
+          "type": "string",
+          "format": "date"
+        },
+        "collection_timezone": {
+          "const": "UTC"
+        },
+        "slot_ordinal": {
+          "const": 1
+        },
+        "decision_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "available_arms": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "RANDOM",
+              "V0_3",
+              "PED"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true
+        },
+        "arm": {
+          "enum": [
+            "RANDOM",
+            "V0_3",
+            "PED"
+          ]
+        },
+        "seed": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "frame_window_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+          },
+          "minItems": 1,
+          "maxItems": 100000,
+          "uniqueItems": true
+        },
+        "frame_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "prior_assignment_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+          },
+          "minItems": 0,
+          "maxItems": 100000
+        },
+        "arm_probability": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "conditional_window_probability": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "step_inclusion_probability": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "cumulative_inclusion_probability": {
+          "type": "null"
+        },
+        "probability_basis": {
+          "const": "CONDITIONAL_ON_FROZEN_SLOT_FRAME_AND_RECORDED_PRIOR_ASSIGNMENTS"
+        }
+      },
+      "required": [
+        "record_id",
+        "record_hash",
+        "window_id",
+        "collection_day",
+        "collection_timezone",
+        "slot_ordinal",
+        "decision_at",
+        "available_arms",
+        "arm",
+        "seed",
+        "frame_window_ids",
+        "frame_hash",
+        "prior_assignment_ids",
+        "arm_probability",
+        "conditional_window_probability",
+        "step_inclusion_probability",
+        "cumulative_inclusion_probability",
+        "probability_basis"
+      ],
+      "additionalProperties": false
+    },
+    "prompt_packet": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "record_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "assignment_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "episode_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "rendered_neutral_questions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "version": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "response_schema": {
+                "type": "object"
+              },
+              "presentation": {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "CHOICE",
+                      "ORDINAL_OR_UNKNOWN",
+                      "TEXT_OR_UNKNOWN"
+                    ]
+                  },
+                  "options": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "value": {},
+                        "label": {
+                          "type": "string",
+                          "maxLength": 4000
+                        }
+                      },
+                      "required": [
+                        "value",
+                        "label"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "minItems": 0,
+                    "maxItems": 20
+                  },
+                  "lower_anchor": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 4000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "upper_anchor": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 4000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "kind",
+                  "options",
+                  "lower_anchor",
+                  "upper_anchor"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "question_id",
+              "version",
+              "text",
+              "required",
+              "response_schema",
+              "presentation"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "allowed_followup_question_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+          },
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "display_context": {
+          "type": "object",
+          "properties": {
+            "tracks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "maxLength": 1000
+                  },
+                  "artist": {
+                    "type": "string",
+                    "maxLength": 1000
+                  }
+                },
+                "required": [
+                  "title",
+                  "artist"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1,
+              "maxItems": 100
+            },
+            "historical_start_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+            },
+            "historical_end_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+            },
+            "time_quality": {
+              "enum": [
+                "OBSERVED",
+                "ESTIMATED",
+                "UNKNOWN"
+              ]
+            }
+          },
+          "required": [
+            "tracks",
+            "historical_start_at",
+            "historical_end_at",
+            "time_quality"
+          ],
+          "additionalProperties": false
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "available_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        }
+      },
+      "required": [
+        "record_id",
+        "record_hash",
+        "assignment_id",
+        "episode_id",
+        "rendered_neutral_questions",
+        "allowed_followup_question_ids",
+        "display_context",
+        "created_at",
+        "available_at"
+      ],
+      "additionalProperties": false
+    },
+    "submission": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "record_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "prompt_packet_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "stage": {
+          "enum": [
+            "NEUTRAL",
+            "FOLLOWUP"
+          ]
+        },
+        "submitted_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "locked_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "question_version": {
+                "const": "1.0.0"
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "CLEAR",
+                      "VAGUE",
+                      "NOT_RECALLED",
+                      "UNSURE",
+                      "NOT_APPLICABLE",
+                      "DECLINED"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "KNOWN",
+                          "NOT_RECALLED",
+                          "UNSURE",
+                          "NOT_APPLICABLE",
+                          "DECLINED"
+                        ]
+                      },
+                      "value": {
+                        "anyOf": [
+                          {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 7
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "status",
+                      "value"
+                    ],
+                    "additionalProperties": false,
+                    "allOf": [
+                      {
+                        "if": {
+                          "properties": {
+                            "status": {
+                              "const": "KNOWN"
+                            }
+                          }
+                        },
+                        "then": {
+                          "properties": {
+                            "value": {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 7
+                            }
+                          }
+                        },
+                        "else": {
+                          "properties": {
+                            "value": {
+                              "type": "null"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "ANSWERED",
+                          "UNSURE",
+                          "DECLINED"
+                        ]
+                      },
+                      "value": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "maxLength": 4000
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "status",
+                      "value"
+                    ],
+                    "additionalProperties": false,
+                    "allOf": [
+                      {
+                        "if": {
+                          "properties": {
+                            "status": {
+                              "const": "ANSWERED"
+                            }
+                          }
+                        },
+                        "then": {
+                          "properties": {
+                            "value": {
+                              "type": "string",
+                              "maxLength": 4000
+                            }
+                          }
+                        },
+                        "else": {
+                          "properties": {
+                            "value": {
+                              "type": "null"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "required": [
+              "question_id",
+              "question_version",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 2
+        }
+      },
+      "required": [
+        "record_id",
+        "record_hash",
+        "prompt_packet_id",
+        "stage",
+        "submitted_at",
+        "locked_at",
+        "sequence",
+        "answers"
+      ],
+      "additionalProperties": false
+    },
+    "lock": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "record_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "neutral_submission_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "prompt_packet_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "locked_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "answer_set_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "policy_version": {
+          "const": "durable-neutral-lock-1.0.0"
+        }
+      },
+      "required": [
+        "record_id",
+        "record_hash",
+        "neutral_submission_id",
+        "prompt_packet_id",
+        "locked_at",
+        "sequence",
+        "answer_set_hash",
+        "policy_version"
+      ],
+      "additionalProperties": false
+    },
+    "prompt_event": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "record_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "prompt_packet_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "event_type": {
+          "enum": [
+            "CREATED",
+            "OPENED",
+            "NEUTRAL_LOCKED",
+            "FOLLOWUP_SHOWN",
+            "FOLLOWUP_LOCKED",
+            "COMPLETED",
+            "DECLINED",
+            "EXPIRED"
+          ]
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "question_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rendered_question": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "question_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "version": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                },
+                "required": {
+                  "type": "boolean"
+                },
+                "response_schema": {
+                  "type": "object"
+                },
+                "presentation": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "CHOICE",
+                        "ORDINAL_OR_UNKNOWN",
+                        "TEXT_OR_UNKNOWN"
+                      ]
+                    },
+                    "options": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "value": {},
+                          "label": {
+                            "type": "string",
+                            "maxLength": 4000
+                          }
+                        },
+                        "required": [
+                          "value",
+                          "label"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 0,
+                      "maxItems": 20
+                    },
+                    "lower_anchor": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "maxLength": 4000
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "upper_anchor": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "maxLength": 4000
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "options",
+                    "lower_anchor",
+                    "upper_anchor"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "question_id",
+                "version",
+                "text",
+                "required",
+                "response_schema",
+                "presentation"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lock_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "record_id",
+        "record_hash",
+        "prompt_packet_id",
+        "event_type",
+        "occurred_at",
+        "sequence",
+        "question_id",
+        "rendered_question",
+        "lock_id"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

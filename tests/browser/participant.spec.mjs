@@ -1,0 +1,55 @@
+import { test,expect } from '@playwright/test'
+import { spawn,spawnSync } from 'node:child_process'
+import { mkdtempSync,rmSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join,resolve } from 'node:path'
+const python=process.env.PARTICIPANT_TEST_PYTHON||resolve('.venv/bin/python')
+
+async function start(directory){const child=spawn(python,['-m','participant.server','--no-browser','--port','0','--data-dir',join(directory,'data')],{cwd:process.cwd(),stdio:['ignore','pipe','pipe'],env:process.env});let output='';return await new Promise((ok,fail)=>{const timer=setTimeout(()=>{child.kill();fail(Error('Local app did not start'))},15000);child.stdout.on('data',chunk=>{output+=chunk;const url=output.match(/http:\/\/127\.0\.0\.1:\d+\/\?session=[A-Za-z0-9_-]+/);if(url){clearTimeout(timer);ok({child,url:url[0]})}});child.once('exit',code=>{clearTimeout(timer);fail(Error('Local server exited: '+code))})})}
+async function stop(server){if(server.child.exitCode!==null)return;await new Promise(ok=>{server.child.once('exit',ok);server.child.kill('SIGINT')})}
+
+test('offline participant imports, resumes, locks, reopens, exports and passes M0',async({page},testInfo)=>{
+ const directory=mkdtempSync(join(tmpdir(),'resonance-browser-'));let server
+ try {
+  const generated=spawnSync(python,['scripts/test_fixture.py',directory],{encoding:'utf8'});expect(generated.status,generated.stderr).toBe(0);const fixture=JSON.parse(generated.stdout)
+  const remote=[];page.on('request',request=>{if(!request.url().startsWith('http://127.0.0.1:'))remote.push(request.url())})
+  server=await start(directory);await page.goto(server.url)
+  await page.getByLabel('Study configuration JSON').setInputFiles(fixture.config_path)
+  await page.getByLabel('Researcher-provided configuration SHA-256').fill(fixture.config_hash)
+  await page.getByRole('checkbox',{name:'I agree to local processing for this study.'}).check()
+  await page.getByRole('checkbox',{name:/Include normalized listening history/}).check()
+  await page.getByRole('button',{name:'Start my local study'}).click()
+  await expect(page.getByRole('heading',{name:'1. Import Spotify history'})).toBeVisible()
+  await page.getByLabel('History file',{exact:true}).setInputFiles(fixture.history_path)
+  await page.getByRole('button',{name:'Import and prepare reflections'}).click()
+  await expect(page.getByRole('heading',{name:'64 plays · 4 sessions'})).toBeVisible({timeout:60000})
+  await page.getByRole('button',{name:'Open today’s reflection'}).click()
+  await page.getByLabel('Do you remember this particular listening period?').selectOption('CLEAR')
+  await Promise.all([page.waitForResponse(r=>r.url().endsWith('/draft')&&r.status()===200),page.getByLabel('How personally meaningful was this particular listening experience to you?').selectOption('KNOWN:6')])
+  await expect(page.getByText('Open optional follow-up questions')).toHaveCount(0)
+  await stop(server);server=await start(directory);await page.goto(server.url)
+  await page.getByRole('button',{name:'Continue',exact:true}).click()
+  await expect(page.getByLabel('Do you remember this particular listening period?')).toHaveValue('CLEAR')
+  await expect(page.getByLabel('How personally meaningful was this particular listening experience to you?')).toHaveValue('KNOWN:6')
+  await page.getByRole('button',{name:'Save and lock my initial answers'}).click()
+  await expect(page.getByText('Your initial response is locked.')).toBeVisible()
+  await page.reload();await page.getByRole('button',{name:'Continue',exact:true}).click()
+  await expect(page.getByText('Your initial response is locked.')).toBeVisible()
+  await page.getByRole('button',{name:'Open optional follow-up questions'}).click()
+  await page.locator('#followupStatus0').selectOption('ANSWERED')
+  await page.locator('#followupText0').fill('This is a synthetic test reflection.')
+  await page.getByRole('button',{name:'Save optional reflections and finish'}).click()
+  await expect(page.getByRole('button',{name:'View saved reflection'})).toBeVisible()
+  await page.getByRole('checkbox',{name:/I consent to sharing these reflection responses/}).check()
+  await page.getByRole('button',{name:'Review export contents'}).click()
+  await expect(page.getByRole('heading',{name:'Review your export.'})).toBeVisible()
+  await page.getByRole('checkbox',{name:/I reviewed these contents/}).check()
+  await page.getByRole('button',{name:'Save encrypted package'}).click()
+  const event=page.waitForEvent('download');await page.getByRole('link',{name:'Download .resonance.age'}).click();const download=await event
+  const path=join(directory,'participant.resonance.age');await download.saveAs(path)
+  const checked=spawnSync(python,['scripts/check_test_export.py',path,fixture.identity_path,fixture.recipient_fingerprint],{encoding:'utf8'});expect(checked.status,checked.stderr).toBe(0)
+  const report=JSON.parse(checked.stdout);expect(report.status).toBe('PASS');expect(report.events).toBe(64);expect(report.followups_shown).toBe(2);expect(report.neutral_answers[1].value.value).toBe(6);expect(report.temporal_mode).toBe('RETROSPECTIVE_REPLAY')
+  await stop(server);server=await start(directory);await page.goto(server.url);await expect(page.getByRole('button',{name:'View saved reflection'})).toBeVisible();expect(remote).toEqual([])
+  await page.screenshot({path:testInfo.outputPath('participant-complete.png'),fullPage:true})
+ } finally {if(server)await stop(server);rmSync(directory,{recursive:true,force:true})}
+})

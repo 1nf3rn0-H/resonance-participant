@@ -1,0 +1,317 @@
+{
+  "version": "neutral-retro-1.0.0",
+  "status": "DRAFT_PILOT",
+  "neutral_questions": [
+    {
+      "question_id": "episode.recognition",
+      "version": "1.0.0",
+      "text": "Do you remember this particular listening period?",
+      "required": true,
+      "response_schema": {
+        "enum": [
+          "CLEAR",
+          "VAGUE",
+          "NOT_RECALLED",
+          "UNSURE",
+          "NOT_APPLICABLE",
+          "DECLINED"
+        ]
+      },
+      "presentation": {
+        "kind": "CHOICE",
+        "options": [
+          {
+            "value": "CLEAR",
+            "label": "Clearly"
+          },
+          {
+            "value": "VAGUE",
+            "label": "Vaguely"
+          },
+          {
+            "value": "NOT_RECALLED",
+            "label": "I do not recall"
+          },
+          {
+            "value": "UNSURE",
+            "label": "I am unsure"
+          },
+          {
+            "value": "NOT_APPLICABLE",
+            "label": "Not applicable"
+          },
+          {
+            "value": "DECLINED",
+            "label": "I prefer not to answer"
+          }
+        ],
+        "lower_anchor": null,
+        "upper_anchor": null
+      }
+    },
+    {
+      "question_id": "episode.meaningfulness",
+      "version": "1.0.0",
+      "text": "How personally meaningful was this particular listening experience to you?",
+      "required": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "KNOWN",
+              "NOT_RECALLED",
+              "UNSURE",
+              "NOT_APPLICABLE",
+              "DECLINED"
+            ]
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 7
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "status",
+          "value"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "KNOWN"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "value": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 7
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "value": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "presentation": {
+        "kind": "ORDINAL_OR_UNKNOWN",
+        "options": [
+          {
+            "value": {
+              "status": "NOT_RECALLED",
+              "value": null
+            },
+            "label": "I do not recall"
+          },
+          {
+            "value": {
+              "status": "UNSURE",
+              "value": null
+            },
+            "label": "I am unsure"
+          },
+          {
+            "value": {
+              "status": "NOT_APPLICABLE",
+              "value": null
+            },
+            "label": "Not applicable"
+          },
+          {
+            "value": {
+              "status": "DECLINED",
+              "value": null
+            },
+            "label": "I prefer not to answer"
+          }
+        ],
+        "lower_anchor": "1 — Not at all personally meaningful",
+        "upper_anchor": "7 — Extremely personally meaningful"
+      }
+    }
+  ],
+  "max_followups": 2,
+  "followup_questions": [
+    {
+      "question_id": "followup.context",
+      "version": "1.0.0",
+      "text": "Is there anything about this listening period you would like to add?",
+      "required": false,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "ANSWERED",
+              "UNSURE",
+              "DECLINED"
+            ]
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4000
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "status",
+          "value"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "ANSWERED"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "value": {
+                  "type": "string",
+                  "maxLength": 4000
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "value": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "presentation": {
+        "kind": "TEXT_OR_UNKNOWN",
+        "options": [
+          {
+            "value": {
+              "status": "UNSURE",
+              "value": null
+            },
+            "label": "I am unsure"
+          },
+          {
+            "value": {
+              "status": "DECLINED",
+              "value": null
+            },
+            "label": "I prefer not to answer"
+          }
+        ],
+        "lower_anchor": null,
+        "upper_anchor": null
+      }
+    },
+    {
+      "question_id": "followup.sequence",
+      "version": "1.0.0",
+      "text": "Do you remember anything about moving between the tracks shown, or are you unsure?",
+      "required": false,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "ANSWERED",
+              "UNSURE",
+              "DECLINED"
+            ]
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4000
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "status",
+          "value"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "ANSWERED"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "value": {
+                  "type": "string",
+                  "maxLength": 4000
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "value": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "presentation": {
+        "kind": "TEXT_OR_UNKNOWN",
+        "options": [
+          {
+            "value": {
+              "status": "UNSURE",
+              "value": null
+            },
+            "label": "I am unsure"
+          },
+          {
+            "value": {
+              "status": "DECLINED",
+              "value": null
+            },
+            "label": "I prefer not to answer"
+          }
+        ],
+        "lower_anchor": null,
+        "upper_anchor": null
+      }
+    }
+  ]
+}

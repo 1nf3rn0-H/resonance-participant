@@ -1,0 +1,127 @@
+[
+  {
+    "file": "valid-history.json",
+    "valid": true,
+    "kind": "logical"
+  },
+  {
+    "file": "valid-responses-only.json",
+    "valid": true,
+    "kind": "logical"
+  },
+  {
+    "file": "valid-non-recall.json",
+    "valid": true,
+    "kind": "logical"
+  },
+  {
+    "file": "valid-feasibility.json",
+    "valid": true,
+    "kind": "logical"
+  },
+  {
+    "file": "invalid-future-training.json",
+    "valid": false,
+    "kind": "logical"
+  },
+  {
+    "file": "invalid-input-availability.json",
+    "valid": false,
+    "kind": "logical"
+  },
+  {
+    "file": "invalid-consent.json",
+    "valid": false,
+    "kind": "logical"
+  },
+  {
+    "file": "invalid-online.json",
+    "valid": false,
+    "kind": "logical"
+  },
+  {
+    "file": "invalid-question-wording.json",
+    "valid": false,
+    "kind": "logical"
+  },
+  {
+    "file": "invalid-lock.json",
+    "valid": false,
+    "kind": "logical"
+  },
+  {
+    "file": "invalid-followup-before-lock.json",
+    "valid": false,
+    "kind": "logical"
+  },
+  {
+    "file": "invalid-collection-day.json",
+    "valid": false,
+    "kind": "logical"
+  },
+  {
+    "file": "invalid-probability.json",
+    "valid": false,
+    "kind": "logical"
+  },
+  {
+    "file": "invalid-preview.json",
+    "valid": false,
+    "kind": "logical"
+  },
+  {
+    "file": "invalid-source-field.json",
+    "valid": false,
+    "kind": "logical"
+  },
+  {
+    "file": "invalid-tampered-hash.json",
+    "valid": false,
+    "kind": "logical"
+  },
+  {
+    "file": "hostile-duplicate-json-key.json",
+    "valid": false,
+    "kind": "logical"
+  },
+  {
+    "file": "hostile-path-traversal.zip",
+    "valid": false,
+    "kind": "archive"
+  },
+  {
+    "file": "hostile-zip-bomb.zip",
+    "valid": false,
+    "kind": "archive"
+  },
+  {
+    "file": "hostile-symlink.zip",
+    "valid": false,
+    "kind": "archive"
+  },
+  {
+    "file": "valid-history.zip",
+    "valid": true,
+    "kind": "archive"
+  },
+  {
+    "file": "hostile-extra-private-file.zip",
+    "valid": false,
+    "kind": "archive"
+  },
+  {
+    "file": "hostile-missing-checksums.zip",
+    "valid": false,
+    "kind": "archive"
+  },
+  {
+    "file": "valid-history.resonance.age",
+    "valid": true,
+    "kind": "encrypted"
+  },
+  {
+    "file": "hostile-tampered.resonance.age",
+    "valid": false,
+    "kind": "encrypted"
+  }
+]

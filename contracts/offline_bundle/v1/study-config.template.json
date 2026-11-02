@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "status": "UNCONFIGURED_DRAFT_NOT_FOR_COLLECTION",
+  "study_id": null,
+  "protocol_version": "offline-retro-mvp-1.0.0-draft",
+  "recipient_public_key": null,
+  "recipient_fingerprint": null,
+  "enrollment_seed_commitment": null,
+  "export_enabled": false,
+  "distribution_authentication": "REQUIRES_PINNED_AUTHENTICATED_RELEASE_OR_STUDY_SIGNATURE"
+}

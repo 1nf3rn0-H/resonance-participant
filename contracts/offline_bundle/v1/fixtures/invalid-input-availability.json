@@ -1,0 +1,1041 @@
+{
+  "manifest": {
+    "format": "resonance-bundle",
+    "schema_version": "1.0.0",
+    "bundle_id": "fixture-bundle-history",
+    "study_id": "resonance-contract-fixtures",
+    "participant_pseudonym": "fixture-person",
+    "protocol_version": "offline-retro-mvp-1.0.0-draft",
+    "temporal_mode": "RETROSPECTIVE_REPLAY",
+    "trial_type": "THREE_ARM_PILOT",
+    "app_release": "participant-contract-fixture-1.0.0",
+    "generated_at": "2026-10-30T12:10:00.000Z",
+    "previous_bundle_id": null,
+    "export_scope": "HISTORY_AND_RESPONSES",
+    "question_bank_hash": "bda30442886c2eb39b9c888609560c10ec633c34e9a15666dc63010450173c55",
+    "sampling_config_hash": "8e890b8c9f5117ee5ae0ee90fcd456be449f2ab49a55f9c44936c26fae512d88",
+    "content_hash": "ffc665ac498f67935070e4cc9353580f45cc3903078d2b57627e1102fd7a4599",
+    "integrity_hash": "479c01787ec88ed2853f0654c7b7637d60deef0a9d58aaeee17f82672fb41764",
+    "test_only": true
+  },
+  "consent": {
+    "record_id": "consent-1",
+    "record_hash": "edde5a0c1220753443a6c3fbc19a6b879a250de42c8980522b225b717374a1a7",
+    "version": "offline-consent-1.0.0",
+    "form_hash": "d783db44d696ce25b20b04bda748c64da4668c41d506a2cabc9bdf8587f216f2",
+    "accepted_at": "2026-10-30T11:00:00.000Z",
+    "grants": {
+      "share_responses": true,
+      "share_listening_history": true
+    },
+    "withdrawal_notice_version": "offline-withdrawal-1.0.0"
+  },
+  "provenance": {
+    "source_data_status": "INCLUDED",
+    "input_manifest_hash": "be8805ca243a92565fde4b20e8df6c3493a40b60431eafe3a2f1e0f69b2e88ab",
+    "source_coverage_start_at": "2026-03-01T10:00:00.000Z",
+    "source_coverage_end_at": "2026-03-01T10:14:00.000Z",
+    "sampling_cutoff_at": "2026-10-30T11:10:00.000Z",
+    "participant_clock_status": "DEVICE_REPORTED_NOT_INDEPENDENTLY_VERIFIED",
+    "sampling_seed": "contract-seed-1",
+    "seed_commitment": "042bb0e54a34d48d13e06f6832f1c32f97b98bfe65803dda2d96f0f0ef594038"
+  },
+  "history_imports": [
+    {
+      "record_id": "import-1",
+      "record_hash": "9c67b581be8caa4858430b09d83e00d4c017568e436c7b81cb3df660f5cdc8e0",
+      "provider": "SPOTIFY",
+      "source_file_sha256": "a524de388c49af09adedea69d51d4585fdb48d6b9fea728802ada1f20ad5fbef",
+      "parser_version": "spotify-fixture-1",
+      "actual_imported_at": "2026-10-30T11:01:00.000Z",
+      "coverage_start_at": "2026-03-01T10:00:00.000Z",
+      "coverage_end_at": "2026-03-01T10:14:00.000Z"
+    }
+  ],
+  "tracks": [
+    {
+      "record_id": "track-1",
+      "record_hash": "8d7663043cd23cb5331e907362b93f303510c55f3a0dab15ddf0c7b5476a59e3",
+      "provider_ref": "spotify:track:synthetic-contract-track",
+      "title": "Synthetic listening fixture",
+      "artist": "Contract fixture artist"
+    }
+  ],
+  "events": [
+    {
+      "record_id": "event-0",
+      "record_hash": "a2e51f8f4b32fea2434af044eb79d5e7cbeedcab306a08a0809d98a0e4f930a2",
+      "import_id": "import-1",
+      "track_id": "track-1",
+      "event_key": "23a6abed8d3abac990a24073c82ea23e56e3bd0b89c3c5cc6faa3ae6b3d19379",
+      "source_ordinal": 0,
+      "provider_timestamp_raw": "2026-03-01T10:00:00.000Z",
+      "provider_timestamp_semantics": "END",
+      "occurred_at": "2026-03-01T10:00:00.000Z",
+      "observed_start_at": null,
+      "observed_end_at": "2026-03-01T10:00:00.000Z",
+      "estimated_start_at": "2026-03-01T09:59:00.000Z",
+      "estimated_end_at": null,
+      "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+      "time_quality": "ESTIMATED",
+      "source_available_at": "2026-10-31T12:00:00.000Z",
+      "played_ms": 60000,
+      "skipped": null,
+      "reason_start": null,
+      "reason_end": null,
+      "shuffle": null,
+      "opportunity": "UNKNOWN"
+    },
+    {
+      "record_id": "event-1",
+      "record_hash": "74dcabf3353eb8b38b578de4141f17637cf94db43d944c0cc0c14eb760df7860",
+      "import_id": "import-1",
+      "track_id": "track-1",
+      "event_key": "0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+      "source_ordinal": 1,
+      "provider_timestamp_raw": "2026-03-01T10:02:00.000Z",
+      "provider_timestamp_semantics": "END",
+      "occurred_at": "2026-03-01T10:02:00.000Z",
+      "observed_start_at": null,
+      "observed_end_at": "2026-03-01T10:02:00.000Z",
+      "estimated_start_at": "2026-03-01T10:01:00.000Z",
+      "estimated_end_at": null,
+      "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+      "time_quality": "ESTIMATED",
+      "source_available_at": "2026-10-30T11:01:00.000Z",
+      "played_ms": 60000,
+      "skipped": false,
+      "reason_start": null,
+      "reason_end": null,
+      "shuffle": null,
+      "opportunity": "UNKNOWN"
+    },
+    {
+      "record_id": "event-2",
+      "record_hash": "8a1e8dca0eece445390270a9834c969ed022f7fac486a68ed690e9da48e2cdac",
+      "import_id": "import-1",
+      "track_id": "track-1",
+      "event_key": "0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+      "source_ordinal": 2,
+      "provider_timestamp_raw": "2026-03-01T10:04:00.000Z",
+      "provider_timestamp_semantics": "END",
+      "occurred_at": "2026-03-01T10:04:00.000Z",
+      "observed_start_at": null,
+      "observed_end_at": "2026-03-01T10:04:00.000Z",
+      "estimated_start_at": "2026-03-01T10:03:00.000Z",
+      "estimated_end_at": null,
+      "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+      "time_quality": "ESTIMATED",
+      "source_available_at": "2026-10-30T11:01:00.000Z",
+      "played_ms": 60000,
+      "skipped": false,
+      "reason_start": null,
+      "reason_end": null,
+      "shuffle": null,
+      "opportunity": "UNKNOWN"
+    },
+    {
+      "record_id": "event-3",
+      "record_hash": "d3e7ccff6c45edd9be1d2bb0ad0908ac6fab8c3090745c031604aa80bf2a7188",
+      "import_id": "import-1",
+      "track_id": "track-1",
+      "event_key": "897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36",
+      "source_ordinal": 3,
+      "provider_timestamp_raw": "2026-03-01T10:06:00.000Z",
+      "provider_timestamp_semantics": "END",
+      "occurred_at": "2026-03-01T10:06:00.000Z",
+      "observed_start_at": null,
+      "observed_end_at": "2026-03-01T10:06:00.000Z",
+      "estimated_start_at": "2026-03-01T10:05:00.000Z",
+      "estimated_end_at": null,
+      "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+      "time_quality": "ESTIMATED",
+      "source_available_at": "2026-10-30T11:01:00.000Z",
+      "played_ms": 60000,
+      "skipped": true,
+      "reason_start": null,
+      "reason_end": null,
+      "shuffle": null,
+      "opportunity": "UNKNOWN"
+    },
+    {
+      "record_id": "event-4",
+      "record_hash": "aa3f404adb4518878710af8427273c9ad68d6045d29ce1ed73ce0cabf1c4e046",
+      "import_id": "import-1",
+      "track_id": "track-1",
+      "event_key": "b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+      "source_ordinal": 4,
+      "provider_timestamp_raw": "2026-03-01T10:08:00.000Z",
+      "provider_timestamp_semantics": "END",
+      "occurred_at": "2026-03-01T10:08:00.000Z",
+      "observed_start_at": null,
+      "observed_end_at": "2026-03-01T10:08:00.000Z",
+      "estimated_start_at": "2026-03-01T10:07:00.000Z",
+      "estimated_end_at": null,
+      "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+      "time_quality": "ESTIMATED",
+      "source_available_at": "2026-10-30T11:01:00.000Z",
+      "played_ms": 60000,
+      "skipped": false,
+      "reason_start": null,
+      "reason_end": null,
+      "shuffle": null,
+      "opportunity": "UNKNOWN"
+    },
+    {
+      "record_id": "event-5",
+      "record_hash": "5ac446149d59c383187b252fff31fc223158a49ed5129b072f5fe77b5b27a5ce",
+      "import_id": "import-1",
+      "track_id": "track-1",
+      "event_key": "80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+      "source_ordinal": 5,
+      "provider_timestamp_raw": "2026-03-01T10:10:00.000Z",
+      "provider_timestamp_semantics": "END",
+      "occurred_at": "2026-03-01T10:10:00.000Z",
+      "observed_start_at": null,
+      "observed_end_at": "2026-03-01T10:10:00.000Z",
+      "estimated_start_at": "2026-03-01T10:09:00.000Z",
+      "estimated_end_at": null,
+      "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+      "time_quality": "ESTIMATED",
+      "source_available_at": "2026-10-30T11:01:00.000Z",
+      "played_ms": 60000,
+      "skipped": false,
+      "reason_start": null,
+      "reason_end": null,
+      "shuffle": null,
+      "opportunity": "UNKNOWN"
+    },
+    {
+      "record_id": "event-6",
+      "record_hash": "fae733452ddee29c119bfd9db49d698537197b429a16440d22c0e8531dd66db4",
+      "import_id": "import-1",
+      "track_id": "track-1",
+      "event_key": "41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+      "source_ordinal": 6,
+      "provider_timestamp_raw": "2026-03-01T10:12:00.000Z",
+      "provider_timestamp_semantics": "END",
+      "occurred_at": "2026-03-01T10:12:00.000Z",
+      "observed_start_at": null,
+      "observed_end_at": "2026-03-01T10:12:00.000Z",
+      "estimated_start_at": "2026-03-01T10:11:00.000Z",
+      "estimated_end_at": null,
+      "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+      "time_quality": "ESTIMATED",
+      "source_available_at": "2026-10-30T11:01:00.000Z",
+      "played_ms": 60000,
+      "skipped": true,
+      "reason_start": null,
+      "reason_end": null,
+      "shuffle": null,
+      "opportunity": "UNKNOWN"
+    },
+    {
+      "record_id": "event-7",
+      "record_hash": "07a46456ed46074875db5ee3d9030e461afd86022c1af089430498d250929b25",
+      "import_id": "import-1",
+      "track_id": "track-1",
+      "event_key": "bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9",
+      "source_ordinal": 7,
+      "provider_timestamp_raw": "2026-03-01T10:14:00.000Z",
+      "provider_timestamp_semantics": "END",
+      "occurred_at": "2026-03-01T10:14:00.000Z",
+      "observed_start_at": null,
+      "observed_end_at": "2026-03-01T10:14:00.000Z",
+      "estimated_start_at": "2026-03-01T10:13:00.000Z",
+      "estimated_end_at": null,
+      "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+      "time_quality": "ESTIMATED",
+      "source_available_at": "2026-10-30T11:01:00.000Z",
+      "played_ms": 60000,
+      "skipped": false,
+      "reason_start": null,
+      "reason_end": null,
+      "shuffle": null,
+      "opportunity": "UNKNOWN"
+    }
+  ],
+  "episode_snapshots": [
+    {
+      "record_id": "episode-0",
+      "record_hash": "a64b93e3343abb885188d93acd848cafa7efc1afa9370c9b04c483e0232b72e8",
+      "episode_key": "3420243652a0b4d7dc9a623c2e9e1f255d58d751b60938892262933f938b6788",
+      "historical_start_at": "2026-03-01T10:00:00.000Z",
+      "historical_end_at": "2026-03-01T10:06:00.000Z",
+      "episode_available_at": "2026-10-30T11:11:00.000Z",
+      "time_quality": "ESTIMATED",
+      "event_refs": [
+        "23a6abed8d3abac990a24073c82ea23e56e3bd0b89c3c5cc6faa3ae6b3d19379",
+        "0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+        "0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+        "897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36"
+      ],
+      "display_tracks": [
+        {
+          "title": "Synthetic listening fixture",
+          "artist": "Contract fixture artist"
+        }
+      ],
+      "source_data_status": "INCLUDED"
+    },
+    {
+      "record_id": "episode-1",
+      "record_hash": "5ef01c3a2280cf70c5af426856c84b22ac4c4eed5182adb54a12e920a7fc5488",
+      "episode_key": "f359c45d214508e1384a495c9948da1b80b2d246955f16bae43121e8bd488931",
+      "historical_start_at": "2026-03-01T10:08:00.000Z",
+      "historical_end_at": "2026-03-01T10:14:00.000Z",
+      "episode_available_at": "2026-10-30T11:11:00.000Z",
+      "time_quality": "ESTIMATED",
+      "event_refs": [
+        "b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+        "80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+        "41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+        "bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9"
+      ],
+      "display_tracks": [
+        {
+          "title": "Synthetic listening fixture",
+          "artist": "Contract fixture artist"
+        }
+      ],
+      "source_data_status": "INCLUDED"
+    }
+  ],
+  "eligible_windows": [
+    {
+      "record_id": "window-0",
+      "record_hash": "5c2c3ee5134eb4482010a62ba0377baa7f5e98cb9b701258a79f5c5913c5f0ec",
+      "episode_id": "episode-0",
+      "window_key": "cb307fbe8b41bdb014da45b13a6041fdf3e6c71a10cdd18f46cceb01c53be77c",
+      "event_refs": [
+        "23a6abed8d3abac990a24073c82ea23e56e3bd0b89c3c5cc6faa3ae6b3d19379",
+        "0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+        "0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+        "897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36"
+      ],
+      "eligibility": "ELIGIBLE",
+      "reasons": [
+        "COMMON_WINDOW"
+      ]
+    },
+    {
+      "record_id": "window-1",
+      "record_hash": "69cf005cae803a11752097595995e6ef661132434ca742aec308d194e1ae39f8",
+      "episode_id": "episode-1",
+      "window_key": "5403542eb54b21c87d70e0155b102267171196d112d7ec0a7cf6a86b2f8a6044",
+      "event_refs": [
+        "b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+        "80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+        "41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+        "bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9"
+      ],
+      "eligibility": "ELIGIBLE",
+      "reasons": [
+        "COMMON_WINDOW"
+      ]
+    }
+  ],
+  "native_candidates": [
+    {
+      "record_id": "native-0",
+      "record_hash": "fd6ba6e7bccf7fecaf9d0323a19218b942f31394ae15c2d071024473a1fd1997",
+      "candidate_key": "55a40653883ca9bd59267c3c2bdf440a1e15087547d10e18a19e64b37319d215",
+      "arm": "V0_3",
+      "algorithm_version": "music-episode-surfacing-0.3.0",
+      "implementation_hash": "460942391dee28c4abf46007008f6aed80be5ef156b971f5a5979e5611b90849",
+      "event_refs": [
+        "23a6abed8d3abac990a24073c82ea23e56e3bd0b89c3c5cc6faa3ae6b3d19379",
+        "0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+        "0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+        "897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36"
+      ],
+      "score": 2.0,
+      "reason_codes": [
+        "SYNTHETIC_FIXTURE"
+      ],
+      "prediction_as_of_at": null,
+      "training_coverage_end_at": null,
+      "target_outcome_at": null,
+      "native_payload": {
+        "fixture_only": true,
+        "original_score": 2.0,
+        "original_reason_codes": [
+          "SYNTHETIC_FIXTURE"
+        ]
+      }
+    },
+    {
+      "record_id": "native-1",
+      "record_hash": "50686b7bc22c7d7a659e7dbcc00dde9765afb3f93c1857d6b2f7d2e3f2882ead",
+      "candidate_key": "b6b4a21847130e00066717e5fef3ad4879c4a142cd50036abf747cb66d29766d",
+      "arm": "PED",
+      "algorithm_version": "music-episode-surfacing-0.5.1",
+      "implementation_hash": "460942391dee28c4abf46007008f6aed80be5ef156b971f5a5979e5611b90849",
+      "event_refs": [
+        "b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+        "80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+        "41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+        "bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9"
+      ],
+      "score": 3.0,
+      "reason_codes": [
+        "SYNTHETIC_FIXTURE"
+      ],
+      "prediction_as_of_at": "2026-03-01T09:59:00.000Z",
+      "training_coverage_end_at": null,
+      "target_outcome_at": "2026-03-01T10:00:00.000Z",
+      "native_payload": {
+        "fixture_only": true,
+        "original_score": 3.0,
+        "original_reason_codes": [
+          "SYNTHETIC_FIXTURE"
+        ]
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "record_id": "mapping-window-0-RANDOM",
+      "record_hash": "6450c3273fe4afde42a5ce233bbdf616675123733c6f2f6e0b901cf141cebb68",
+      "window_id": "window-0",
+      "arm": "RANDOM",
+      "native_candidate_ids": [],
+      "mapped_score": 0.0
+    },
+    {
+      "record_id": "mapping-window-0-V0_3",
+      "record_hash": "bf91e936a8bead8eabdbf2b1d6e09004ee371bda775f859a9224dd7c79fdd4fc",
+      "window_id": "window-0",
+      "arm": "V0_3",
+      "native_candidate_ids": [
+        "native-0"
+      ],
+      "mapped_score": 1.0
+    },
+    {
+      "record_id": "mapping-window-0-PED",
+      "record_hash": "84e3bfb4d2e0ef1d8ae1aa25f81bf980990f9d0684f3f26ec43ebe5f7436a4a5",
+      "window_id": "window-0",
+      "arm": "PED",
+      "native_candidate_ids": [],
+      "mapped_score": 0.0
+    },
+    {
+      "record_id": "mapping-window-1-RANDOM",
+      "record_hash": "1fa05ffd61cd015e0f31612976f62bd6d6c7bf044700bc0987bdf69ed8b4a10e",
+      "window_id": "window-1",
+      "arm": "RANDOM",
+      "native_candidate_ids": [],
+      "mapped_score": 0.0
+    },
+    {
+      "record_id": "mapping-window-1-V0_3",
+      "record_hash": "4a7e332ddb314acf90aaf139ca7672f284821b3e68f895a2a2941c20eb7b0d11",
+      "window_id": "window-1",
+      "arm": "V0_3",
+      "native_candidate_ids": [],
+      "mapped_score": 0.0
+    },
+    {
+      "record_id": "mapping-window-1-PED",
+      "record_hash": "956142149f374948b0e469c442b05ec29e7f5ac218edd5b101e87c6cb05e9ea8",
+      "window_id": "window-1",
+      "arm": "PED",
+      "native_candidate_ids": [
+        "native-1"
+      ],
+      "mapped_score": 1.0
+    }
+  ],
+  "assignments": [
+    {
+      "record_id": "assignment-1",
+      "record_hash": "0f3364a663871870aa76f7227542eb2cfdd31b209a7b1a9891fd86d9f05b7b4c",
+      "window_id": "window-0",
+      "arm": "RANDOM",
+      "frame_window_ids": [
+        "window-1",
+        "window-0"
+      ],
+      "frame_hash": "828bb7c560d9c29c4654bdf13f7b7e38d4e601fc53cdf0aa8fb268ee89170116",
+      "arm_probability": 0.3333333333333333,
+      "conditional_window_probability": 0.5,
+      "step_inclusion_probability": 0.5,
+      "collection_day": "2026-10-30",
+      "collection_timezone": "UTC",
+      "slot_ordinal": 1,
+      "decision_at": "2026-10-30T12:00:00.000Z",
+      "available_arms": [
+        "RANDOM",
+        "V0_3",
+        "PED"
+      ],
+      "seed": "contract-seed-1",
+      "prior_assignment_ids": [],
+      "cumulative_inclusion_probability": null,
+      "probability_basis": "CONDITIONAL_ON_FROZEN_SLOT_FRAME_AND_RECORDED_PRIOR_ASSIGNMENTS"
+    }
+  ],
+  "prompt_packets": [
+    {
+      "record_id": "prompt-1",
+      "record_hash": "ba40883edec3c92036ceb1afc2c778629e8e298c2be3c8139164cf738de57e94",
+      "assignment_id": "assignment-1",
+      "episode_id": "episode-0",
+      "rendered_neutral_questions": [
+        {
+          "question_id": "episode.recognition",
+          "version": "1.0.0",
+          "text": "Do you remember this particular listening period?",
+          "required": true,
+          "response_schema": {
+            "enum": [
+              "CLEAR",
+              "VAGUE",
+              "NOT_RECALLED",
+              "UNSURE",
+              "NOT_APPLICABLE",
+              "DECLINED"
+            ]
+          },
+          "presentation": {
+            "kind": "CHOICE",
+            "options": [
+              {
+                "value": "CLEAR",
+                "label": "Clearly"
+              },
+              {
+                "value": "VAGUE",
+                "label": "Vaguely"
+              },
+              {
+                "value": "NOT_RECALLED",
+                "label": "I do not recall"
+              },
+              {
+                "value": "UNSURE",
+                "label": "I am unsure"
+              },
+              {
+                "value": "NOT_APPLICABLE",
+                "label": "Not applicable"
+              },
+              {
+                "value": "DECLINED",
+                "label": "I prefer not to answer"
+              }
+            ],
+            "lower_anchor": null,
+            "upper_anchor": null
+          }
+        },
+        {
+          "question_id": "episode.meaningfulness",
+          "version": "1.0.0",
+          "text": "How personally meaningful was this particular listening experience to you?",
+          "required": true,
+          "response_schema": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "enum": [
+                  "KNOWN",
+                  "NOT_RECALLED",
+                  "UNSURE",
+                  "NOT_APPLICABLE",
+                  "DECLINED"
+                ]
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 7
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "status",
+              "value"
+            ],
+            "additionalProperties": false,
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "status": {
+                      "const": "KNOWN"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "value": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 7
+                    }
+                  }
+                },
+                "else": {
+                  "properties": {
+                    "value": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "presentation": {
+            "kind": "ORDINAL_OR_UNKNOWN",
+            "options": [
+              {
+                "value": {
+                  "status": "NOT_RECALLED",
+                  "value": null
+                },
+                "label": "I do not recall"
+              },
+              {
+                "value": {
+                  "status": "UNSURE",
+                  "value": null
+                },
+                "label": "I am unsure"
+              },
+              {
+                "value": {
+                  "status": "NOT_APPLICABLE",
+                  "value": null
+                },
+                "label": "Not applicable"
+              },
+              {
+                "value": {
+                  "status": "DECLINED",
+                  "value": null
+                },
+                "label": "I prefer not to answer"
+              }
+            ],
+            "lower_anchor": "1 — Not at all personally meaningful",
+            "upper_anchor": "7 — Extremely personally meaningful"
+          }
+        }
+      ],
+      "allowed_followup_question_ids": [
+        "followup.context",
+        "followup.sequence"
+      ],
+      "display_context": {
+        "tracks": [
+          {
+            "title": "Synthetic listening fixture",
+            "artist": "Contract fixture artist"
+          }
+        ],
+        "historical_start_at": "2026-03-01T10:00:00.000Z",
+        "historical_end_at": "2026-03-01T10:06:00.000Z",
+        "time_quality": "ESTIMATED"
+      },
+      "created_at": "2026-10-30T12:00:00.000Z",
+      "available_at": "2026-10-30T12:00:00.000Z"
+    }
+  ],
+  "submissions": [
+    {
+      "record_id": "neutral-1",
+      "record_hash": "5e6eb1bf1f5f6924924aec7e06b20e248c4d60c25257d9e73b88da65a6e0a72a",
+      "prompt_packet_id": "prompt-1",
+      "stage": "NEUTRAL",
+      "submitted_at": "2026-10-30T12:02:00.000Z",
+      "locked_at": "2026-10-30T12:02:00.000Z",
+      "sequence": 3,
+      "answers": [
+        {
+          "question_id": "episode.recognition",
+          "question_version": "1.0.0",
+          "value": "CLEAR"
+        },
+        {
+          "question_id": "episode.meaningfulness",
+          "question_version": "1.0.0",
+          "value": {
+            "status": "KNOWN",
+            "value": 6
+          }
+        }
+      ]
+    },
+    {
+      "record_id": "followup-1",
+      "record_hash": "5639b4d8679fe7bc2d3f5c8aa31c8f7bb44a436e6ac636efe0f48229c4216928",
+      "prompt_packet_id": "prompt-1",
+      "stage": "FOLLOWUP",
+      "submitted_at": "2026-10-30T12:04:00.000Z",
+      "locked_at": "2026-10-30T12:04:00.000Z",
+      "sequence": 6,
+      "answers": [
+        {
+          "question_id": "followup.context",
+          "question_version": "1.0.0",
+          "value": {
+            "status": "ANSWERED",
+            "value": "Synthetic recollection — café 🎵"
+          }
+        },
+        {
+          "question_id": "followup.sequence",
+          "question_version": "1.0.0",
+          "value": {
+            "status": "ANSWERED",
+            "value": "Synthetic recollection — café 🎵"
+          }
+        }
+      ]
+    }
+  ],
+  "locks": [
+    {
+      "record_id": "lock-1",
+      "record_hash": "86d8a3dbe223479c1dee3983ca71b43ca4674492bbdfafb63daa2bcc094e2b3b",
+      "neutral_submission_id": "neutral-1",
+      "prompt_packet_id": "prompt-1",
+      "locked_at": "2026-10-30T12:02:00.000Z",
+      "sequence": 3,
+      "answer_set_hash": "ac016944d99e4d106ae15773075fc53692556076984e63e1271b8407c2cbdd21",
+      "policy_version": "durable-neutral-lock-1.0.0"
+    }
+  ],
+  "prompt_events": [
+    {
+      "record_id": "audit-0",
+      "record_hash": "570a5d5d4f52fbcb15afd230a9f7cdb226933a6d51e16383c57e2c1a1717f1b6",
+      "prompt_packet_id": "prompt-1",
+      "event_type": "CREATED",
+      "occurred_at": "2026-10-30T12:00:00.000Z",
+      "sequence": 1,
+      "question_id": null,
+      "rendered_question": null,
+      "lock_id": null
+    },
+    {
+      "record_id": "audit-1",
+      "record_hash": "7e6fef433716e5591fb70670b3d90c26dd8a613714e4fbc30cf0d22d85dadba7",
+      "prompt_packet_id": "prompt-1",
+      "event_type": "OPENED",
+      "occurred_at": "2026-10-30T12:01:00.000Z",
+      "sequence": 2,
+      "question_id": null,
+      "rendered_question": null,
+      "lock_id": null
+    },
+    {
+      "record_id": "audit-2",
+      "record_hash": "cfa8a3ea1e313fe254a9eca1c152bb9eef9f34b5b2813310885778aecd570a76",
+      "prompt_packet_id": "prompt-1",
+      "event_type": "NEUTRAL_LOCKED",
+      "occurred_at": "2026-10-30T12:02:00.000Z",
+      "sequence": 3,
+      "question_id": null,
+      "rendered_question": null,
+      "lock_id": "lock-1"
+    },
+    {
+      "record_id": "audit-followup-0",
+      "record_hash": "c626c165bca1e31d33b9198eae92044cb143dd5ba9b95069ffc9a3407144ecc3",
+      "prompt_packet_id": "prompt-1",
+      "event_type": "FOLLOWUP_SHOWN",
+      "occurred_at": "2026-10-30T12:03:00.000Z",
+      "sequence": 4,
+      "question_id": "followup.context",
+      "rendered_question": {
+        "question_id": "followup.context",
+        "version": "1.0.0",
+        "text": "Is there anything about this listening period you would like to add?",
+        "required": false,
+        "response_schema": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "ANSWERED",
+                "UNSURE",
+                "DECLINED"
+              ]
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 4000
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "ANSWERED"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "maxLength": 4000
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "presentation": {
+          "kind": "TEXT_OR_UNKNOWN",
+          "options": [
+            {
+              "value": {
+                "status": "UNSURE",
+                "value": null
+              },
+              "label": "I am unsure"
+            },
+            {
+              "value": {
+                "status": "DECLINED",
+                "value": null
+              },
+              "label": "I prefer not to answer"
+            }
+          ],
+          "lower_anchor": null,
+          "upper_anchor": null
+        }
+      },
+      "lock_id": "lock-1"
+    },
+    {
+      "record_id": "audit-followup-1",
+      "record_hash": "2e0d24a8e27dedf03c3ed2ea7308129cdfc21e4f8919c125384d30ac19495767",
+      "prompt_packet_id": "prompt-1",
+      "event_type": "FOLLOWUP_SHOWN",
+      "occurred_at": "2026-10-30T12:03:00.000Z",
+      "sequence": 5,
+      "question_id": "followup.sequence",
+      "rendered_question": {
+        "question_id": "followup.sequence",
+        "version": "1.0.0",
+        "text": "Do you remember anything about moving between the tracks shown, or are you unsure?",
+        "required": false,
+        "response_schema": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "ANSWERED",
+                "UNSURE",
+                "DECLINED"
+              ]
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 4000
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "ANSWERED"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "maxLength": 4000
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "value": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "presentation": {
+          "kind": "TEXT_OR_UNKNOWN",
+          "options": [
+            {
+              "value": {
+                "status": "UNSURE",
+                "value": null
+              },
+              "label": "I am unsure"
+            },
+            {
+              "value": {
+                "status": "DECLINED",
+                "value": null
+              },
+              "label": "I prefer not to answer"
+            }
+          ],
+          "lower_anchor": null,
+          "upper_anchor": null
+        }
+      },
+      "lock_id": "lock-1"
+    },
+    {
+      "record_id": "audit-followup-lock",
+      "record_hash": "fed3e37cd84e804c47b54b3045aa3633d8c9e3722d5054bc04e23534ea109416",
+      "prompt_packet_id": "prompt-1",
+      "event_type": "FOLLOWUP_LOCKED",
+      "occurred_at": "2026-10-30T12:04:00.000Z",
+      "sequence": 6,
+      "question_id": null,
+      "rendered_question": null,
+      "lock_id": "lock-1"
+    },
+    {
+      "record_id": "audit-completed",
+      "record_hash": "40f9ddcb36efab8345a8bcbbda410ee6210a529cceb2ba240865344b7cd62913",
+      "prompt_packet_id": "prompt-1",
+      "event_type": "COMPLETED",
+      "occurred_at": "2026-10-30T12:05:00.000Z",
+      "sequence": 7,
+      "question_id": null,
+      "rendered_question": null,
+      "lock_id": "lock-1"
+    }
+  ],
+  "export_preview": {
+    "sections": [
+      {
+        "name": "consent",
+        "count": 1,
+        "records_hash": "3a266677cdb801f1270c69aefb6dec4b1a55d1b0a3bbd5741a5dec1b8b3743b2"
+      },
+      {
+        "name": "history_imports",
+        "count": 1,
+        "records_hash": "ee6a59d6266fbd8ca9fb5a8cc07071ba2dbf6617ed80e1e57350c0120a0591e3"
+      },
+      {
+        "name": "tracks",
+        "count": 1,
+        "records_hash": "d34b57d26807706ab2e76822ccc9ab29447b683fe2bf90b605e33355c88eb4d9"
+      },
+      {
+        "name": "events",
+        "count": 8,
+        "records_hash": "0d35d7c443c264bbef235dd0718f49f4526115232282ed39eaa9429d16477cf0"
+      },
+      {
+        "name": "episode_snapshots",
+        "count": 2,
+        "records_hash": "db1889eabb8a8eb62e3634a608a70e52461444e80aedee55515aa5829d282057"
+      },
+      {
+        "name": "eligible_windows",
+        "count": 2,
+        "records_hash": "9256d9c82dbcc1e0e9788b3641de4858e1c272de56230908f9f08145f04554d2"
+      },
+      {
+        "name": "native_candidates",
+        "count": 2,
+        "records_hash": "604247ca78f0436b47f9c86b0fd00efb04c43c2e826cd0d0e93e6383841df988"
+      },
+      {
+        "name": "mappings",
+        "count": 6,
+        "records_hash": "d3a9653252c66d7553439a12ecb1cf2ec371474b2f51f571168337ce4b0bf500"
+      },
+      {
+        "name": "assignments",
+        "count": 1,
+        "records_hash": "34ed93f57a1e7bcaeee82f0e29b0e43dc7f481d86e9b1707de9e653a00da0622"
+      },
+      {
+        "name": "prompt_packets",
+        "count": 1,
+        "records_hash": "ec4d9b569f7f11032c0907d8ede4a79941bc99f32f3ea08ceba32d84e996b325"
+      },
+      {
+        "name": "submissions",
+        "count": 2,
+        "records_hash": "78a41e5fdfefb8b36d37d60dc28dbcaf74f429a750ac3176bf7474350b1785c1"
+      },
+      {
+        "name": "locks",
+        "count": 1,
+        "records_hash": "1738b77aacac5630a932c43e596feeec924da3b803f61bfce25ae876d23b29b2"
+      },
+      {
+        "name": "prompt_events",
+        "count": 7,
+        "records_hash": "52df2f37f359cf5324cfb1abf74049b23a2895ee93fa105dbed98af8d313b163"
+      },
+      {
+        "name": "provenance",
+        "count": 1,
+        "records_hash": "cfdde7ec2d224c6ec7b76aa2371302d124201a1061f486c06be610b82c235c24"
+      }
+    ],
+    "presented_at": "2026-10-30T12:09:00.000Z",
+    "notice_version": "offline-withdrawal-1.0.0",
+    "notice": "After transfer, deleting data on this device does not delete researcher-held bundles, exports or backups. Contact the study researcher to request withdrawal. Backup retention and already disseminated anonymous results may limit deletion."
+  },
+  "export_authorization": {
+    "consent_record_id": "consent-1",
+    "preview_hash": "3dfda28d6ac45e76b2aeda265f4b1efbfd467e622683f6ad6060d9606659fe43",
+    "explicitly_confirmed": true,
+    "confirmed_at": "2026-10-30T12:09:30.000Z",
+    "encryption": "age-v1",
+    "recipient_fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  }
+}
