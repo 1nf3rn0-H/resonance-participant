@@ -26,3 +26,11 @@ The app's CI repeats that shared contract selftest from its own clean GitHub che
 Retrospective pilot, not prospective EMA or a validated psychological model. No LLM investigator, audio/lyric analysis or psychological profiling. M2 researcher-side integration/review UI is separate. Installation prerequisites are Python 3.11+ and Node 22.18+; installer packaging and real-study enrollment/signing procedures can be improved after this first complete volunteer workflow. Windows launcher is included but not yet part of automated platform acceptance.
 
 Tests use synthetic histories, including forbidden account/IP fields to prove allowlisting, and temporary test keys. Public fixture keys inside the contract are deliberately disclosed and must never be used for a study. No private operational researcher key or participant history belongs in this repository.
+
+## H6-compatible preservation patch (participant 1.0.1)
+
+M0 and both native sampler sources remain byte-identical. New imports retain provider button-navigation opportunity as MANUAL and otherwise known shuffle as SHUFFLE, without treating these labels as deliberate preference. Existing native input adapters ignore opportunity, so sampling semantics are unchanged. Existing captured rows are never rewritten.
+
+The strict M0 format has no duration/playlist/playback-source slots or H6 follow-up definitions. Recognized enriched-history fields are therefore rejected atomically, with a message to keep the original file and obtain a compatible study release. They are not silently discarded. This is a fail-closed limitation, not implementation of enriched H6 exports. Standard Spotify extended and legacy history remains supported. No new H6 questions are activated in this patch.
+
+The synthetic H6 fixture has one recording in two shuffled sessions, skipped in one and retained in the other, explicit unknowns, native button/trackdone reasons and a two-second play with uncertain start. Regression tests verify deterministic order and identical frozen sampler inputs after capture-only opportunity normalization.

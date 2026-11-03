@@ -1,0 +1,90 @@
+[
+  {
+    "ts": "2026-03-01T10:00:00Z",
+    "ms_played": 2000,
+    "master_metadata_track_name": "Synthetic shared recording",
+    "master_metadata_album_artist_name": "Synthetic artist",
+    "spotify_track_uri": "spotify:track:synthetic-shared-recording",
+    "skipped": true,
+    "reason_start": "clickrow",
+    "reason_end": "fwdbtn",
+    "shuffle": true
+  },
+  {
+    "ts": "2026-03-01T10:04:00Z",
+    "ms_played": 180000,
+    "master_metadata_track_name": "Synthetic shared recording",
+    "master_metadata_album_artist_name": "Synthetic artist",
+    "spotify_track_uri": "spotify:track:synthetic-shared-recording",
+    "skipped": false,
+    "reason_start": "trackdone",
+    "reason_end": "trackdone",
+    "shuffle": true
+  },
+  {
+    "ts": "2026-03-01T10:08:00Z",
+    "ms_played": 180000,
+    "master_metadata_track_name": "Synthetic shared recording",
+    "master_metadata_album_artist_name": "Synthetic artist",
+    "spotify_track_uri": "spotify:track:synthetic-shared-recording",
+    "skipped": null,
+    "reason_start": "trackdone",
+    "reason_end": null,
+    "shuffle": true
+  },
+  {
+    "ts": "2026-03-01T10:12:00Z",
+    "ms_played": 180000,
+    "master_metadata_track_name": "Synthetic shared recording",
+    "master_metadata_album_artist_name": "Synthetic artist",
+    "spotify_track_uri": "spotify:track:synthetic-shared-recording",
+    "skipped": false,
+    "reason_start": "trackdone",
+    "reason_end": "trackdone",
+    "shuffle": true
+  },
+  {
+    "ts": "2026-03-02T10:00:00Z",
+    "ms_played": 180000,
+    "master_metadata_track_name": "Synthetic shared recording",
+    "master_metadata_album_artist_name": "Synthetic artist",
+    "spotify_track_uri": "spotify:track:synthetic-shared-recording",
+    "skipped": false,
+    "reason_start": "clickrow",
+    "reason_end": "trackdone",
+    "shuffle": true
+  },
+  {
+    "ts": "2026-03-02T10:04:00Z",
+    "ms_played": 180000,
+    "master_metadata_track_name": "Synthetic shared recording",
+    "master_metadata_album_artist_name": "Synthetic artist",
+    "spotify_track_uri": "spotify:track:synthetic-shared-recording",
+    "skipped": false,
+    "reason_start": "trackdone",
+    "reason_end": "trackdone",
+    "shuffle": true
+  },
+  {
+    "ts": "2026-03-02T10:08:00Z",
+    "ms_played": 180000,
+    "master_metadata_track_name": "Synthetic shared recording",
+    "master_metadata_album_artist_name": "Synthetic artist",
+    "spotify_track_uri": "spotify:track:synthetic-shared-recording",
+    "skipped": null,
+    "reason_start": "trackdone",
+    "reason_end": null,
+    "shuffle": true
+  },
+  {
+    "ts": "2026-03-02T10:12:00Z",
+    "ms_played": 180000,
+    "master_metadata_track_name": "Synthetic shared recording",
+    "master_metadata_album_artist_name": "Synthetic artist",
+    "spotify_track_uri": "spotify:track:synthetic-shared-recording",
+    "skipped": false,
+    "reason_start": "trackdone",
+    "reason_end": "trackdone",
+    "shuffle": true
+  }
+]

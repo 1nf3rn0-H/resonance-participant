@@ -1,1 +1,1 @@
-{"name":"resonance-participant","version":"1.0.0","private":true,"type":"module","scripts":{"test":"python3 -m unittest discover -s tests -v","contract":"python3 -m contracts.offline_bundle.v1.selftest"},"engines":{"node":">=22.18.0"},"devDependencies":{"@playwright/test":"1.58.2"}}
+{"name":"resonance-participant","version":"1.0.1","private":true,"type":"module","scripts":{"test":"python3 -m unittest discover -s tests -v","contract":"python3 -m contracts.offline_bundle.v1.selftest"},"engines":{"node":">=22.18.0"},"devDependencies":{"@playwright/test":"1.58.2"}}

@@ -18,7 +18,7 @@ from .store import Store
 from .ingest import parse
 from .sampling import native_results
 
-VERSION='participant-1.0.0'
+VERSION='participant-1.0.1'
 def now():return datetime.now(timezone.utc).isoformat(timespec='milliseconds').replace('+00:00','Z')
 def identifier(prefix):return prefix+'-'+str(uuid.uuid4())
 
