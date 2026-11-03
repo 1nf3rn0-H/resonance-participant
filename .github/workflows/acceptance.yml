@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/participant-browsers
+      PLAYWRIGHT_BROWSERS_PATH: /tmp/participant-browsers
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
