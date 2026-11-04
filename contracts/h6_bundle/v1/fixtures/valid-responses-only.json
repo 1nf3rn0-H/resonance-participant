@@ -7,10 +7,10 @@
     "bundle_id": "h6-fixture-responses",
     "generated_at": "2026-10-30T12:10:00.000Z",
     "core_integrity_hash": "009998fc8e3e9ccd6e162a5dc6391b6096067b96e42c46ab242e6e96f7230fd5",
-    "contract_release_hash": "c482bca225179044773bfca0a28d996a3f91a5493caa2043f6cba8630c4a34e1",
+    "contract_release_hash": "06b7129e3aa4582113a352e3d7033fbb07bb7df2c09daf016baf4931a21f65c2",
     "question_bank_hash": "4cda7254791b476c2d6e4cb3c7230f854fee9545604b14c9d206c29a9a81e6c9",
     "content_hash": "4b88a1979cc73d58bc010975ec348e0723b621985aa3af3e5761102cfa1b3283",
-    "integrity_hash": "80a788cc879fcf1f4f1d9b350664c8abce8c8954028a3bafeeb134bf84787d62"
+    "integrity_hash": "1f5e937ffb438e882362a56567d5ac0a3aed5517caa181f6d77836af3fda68bc"
   },
   "core": {
     "manifest": {

@@ -9,7 +9,7 @@
     "canonical.mjs": "79e3206ec32d17fe1ff00ee892a59fca4f2e70be333f293b4c73067bd5e966bf",
     "capture.py": "967c137f29a4bc4378941abb7491a2141047fe334724e2cccffa94b63c3b657a",
     "consent.json": "19c226d3cd6f3d5bd311444f1db73111f8df578c2c0f6e14fc172779ffe602ab",
-    "contract.py": "404549839c08483210f4a225aa1f0a249518637287ab3bf5211005a3b03759f5",
+    "contract.py": "1b798517ee06bcea8a02a3bacb35898d866a4e68922616490cfff7aa8d86422c",
     "instrument.py": "fcf6e801ead5ffa878377b13ae78d565ee0a5e06ba59abe983ecaadbd411daff",
     "questions.json": "ab09cbfc96583a4c741a4af80c1bb683404dbb529027a5cd7fe880b6167cc163",
     "release.py": "6e62a97bee1e555b8eb94bf772737aac76521fe2bd2a0a9698b7d39b68450a20",
@@ -18,5 +18,5 @@
     "selftest.py": "6df551832fdf076e1e1a6698d97724e62c3d2ffbef615b35cb8b168a7fb5af30",
     "transport.py": "efe469c180730b28d5a3a5cb19fdf029b2520296dddb8010e1933a1e549e55a4"
   },
-  "content_hash": "c482bca225179044773bfca0a28d996a3f91a5493caa2043f6cba8630c4a34e1"
+  "content_hash": "06b7129e3aa4582113a352e3d7033fbb07bb7df2c09daf016baf4931a21f65c2"
 }

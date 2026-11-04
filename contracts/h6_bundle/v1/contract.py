@@ -124,7 +124,7 @@ def _validate(bundle):
             completion=completions[pid];summary=audit(expected,shown,response['answers'] if response else [])
             require({k:completion[k] for k in summary}==summary,'COMPLETION_AUDIT')
             seq.append(completion['sequence']);require(seq==sorted(set(seq)),'FOLLOWUP_SEQUENCE')
-            require(completion['completed_at']>=selection['selected_at'] and (not response or completion['completed_at']>=response['locked_at']),'COMPLETION_TIME')
+            require(completion['completed_at']>=selection['selected_at'] and all(completion['completed_at']>=r['shown_at'] for r in exposures) and (not response or completion['completed_at']>=response['locked_at']),'COMPLETION_TIME')
             terminal=next((e for e in core['prompt_events'] if e['prompt_packet_id']==pid and e['event_type']=='COMPLETED'),None)
             require(terminal and terminal['sequence']>=completion['sequence'] and terminal['occurred_at']>=completion['completed_at'],'AFTER_TERMINAL')
     preview=bundle['export_preview'];authority=bundle['export_authorization']

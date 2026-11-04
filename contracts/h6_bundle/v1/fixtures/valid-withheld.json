@@ -7,10 +7,10 @@
     "bundle_id": "h6-fixture-full",
     "generated_at": "2026-10-30T12:10:00.000Z",
     "core_integrity_hash": "80859672a7ab37b5d828885c8697e332cb963e41c03cf957cb4feafea55b8fd6",
-    "contract_release_hash": "c482bca225179044773bfca0a28d996a3f91a5493caa2043f6cba8630c4a34e1",
+    "contract_release_hash": "06b7129e3aa4582113a352e3d7033fbb07bb7df2c09daf016baf4931a21f65c2",
     "question_bank_hash": "4cda7254791b476c2d6e4cb3c7230f854fee9545604b14c9d206c29a9a81e6c9",
     "content_hash": "7a00537ee17e4d75b7201488eff4ff33cc82140da30c58f2fea2708fed2c0afd",
-    "integrity_hash": "b671443f970fff955ef43d206d10a50f12a249f488f10f0ac60950ed5ece0a15"
+    "integrity_hash": "469c4561b3789bf6771c07421ded8aba7bc3045f60a2313cd874c910724846d7"
   },
   "core": {
     "manifest": {
