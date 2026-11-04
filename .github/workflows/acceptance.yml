@@ -24,6 +24,7 @@ jobs:
           npm ci --ignore-scripts --prefix contracts/offline_bundle/v1
           npx playwright install --with-deps chromium
           node contracts/offline_bundle/v1/selftest.mjs
+          node contracts/h6_bundle/v1/selftest.mjs
       - name: Run full acceptance with no external network interface
         run: sudo env "PATH=$PATH" "PLAYWRIGHT_BROWSERS_PATH=$PLAYWRIGHT_BROWSERS_PATH" unshare --net sh scripts/offline_acceptance.sh
       - uses: actions/upload-artifact@v4

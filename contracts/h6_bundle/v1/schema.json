@@ -1,0 +1,1171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "manifest": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "const": "resonance-h6-bundle"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "protocol_version": {
+          "const": "offline-retro-h6-1.0.0-pilot"
+        },
+        "bundle_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "core_integrity_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "contract_release_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "question_bank_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "integrity_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "format",
+        "schema_version",
+        "protocol_version",
+        "bundle_id",
+        "generated_at",
+        "core_integrity_hash",
+        "contract_release_hash",
+        "question_bank_hash",
+        "content_hash",
+        "integrity_hash"
+      ],
+      "additionalProperties": false
+    },
+    "core": {
+      "type": "object"
+    },
+    "extension": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "h6-evidence-1.0.0"
+        },
+        "consent": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+            },
+            "record_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "version": {
+              "const": "h6-consent-1.0.0"
+            },
+            "form_hash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "accepted_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+            },
+            "collect_h6": {
+              "const": true
+            },
+            "grants": {
+              "type": "object",
+              "properties": {
+                "share_event_evidence": {
+                  "type": "boolean"
+                },
+                "share_playlist_context": {
+                  "type": "boolean"
+                },
+                "share_followup_evidence": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "share_event_evidence",
+                "share_playlist_context",
+                "share_followup_evidence"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "record_id",
+            "record_hash",
+            "version",
+            "form_hash",
+            "accepted_at",
+            "collect_h6",
+            "grants"
+          ],
+          "additionalProperties": false
+        },
+        "event_evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "record_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "record_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "event_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "event_key": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "source_file_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "source_ordinal": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 86400000
+              },
+              "parser_version": {
+                "const": "spotify-h6-1.0.0"
+              },
+              "native": {
+                "type": "object",
+                "properties": {
+                  "ts": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "endTime": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "spotify_track_uri": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "master_metadata_track_name": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "master_metadata_album_artist_name": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "master_metadata_album_album_name": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "trackName": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "artistName": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "context_uri": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "playlist_uri": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "playlist_name": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "playback_source": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "isrc": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "ms_played": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 86400000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "msPlayed": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 86400000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "duration_ms": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 86400000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "track_duration_ms": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 86400000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "trackDurationMs": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 86400000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "skipped": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "shuffle": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "manual_selection": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "reason_start": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "reason_end": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              },
+              "normalized": {
+                "type": "object",
+                "properties": {
+                  "recording_duration_ms": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 86400000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "duration_quality": {
+                    "enum": [
+                      "PROVIDER_SUPPLIED",
+                      "UNKNOWN",
+                      "CONFLICTING_SOURCE_VALUES"
+                    ]
+                  },
+                  "skip_outcome": {
+                    "enum": [
+                      "SKIPPED",
+                      "RETAINED",
+                      "UNKNOWN"
+                    ]
+                  },
+                  "termination_kind": {
+                    "enum": [
+                      "PROVIDER_NAVIGATION",
+                      "PROVIDER_TRACK_DONE",
+                      "OTHER_PROVIDER_REASON",
+                      "UNKNOWN"
+                    ]
+                  },
+                  "playback_source": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "manual_selection": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "position_evidence": {
+                    "const": "NOT_ESTABLISHED"
+                  }
+                },
+                "required": [
+                  "recording_duration_ms",
+                  "duration_quality",
+                  "skip_outcome",
+                  "termination_kind",
+                  "playback_source",
+                  "manual_selection",
+                  "position_evidence"
+                ],
+                "additionalProperties": false
+              },
+              "withheld_native_fields": {
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "context_uri",
+                    "playlist_uri",
+                    "playlist_name"
+                  ]
+                },
+                "maxItems": 3
+              }
+            },
+            "required": [
+              "record_id",
+              "record_hash",
+              "event_id",
+              "event_key",
+              "source_file_sha256",
+              "source_ordinal",
+              "parser_version",
+              "native",
+              "normalized",
+              "withheld_native_fields"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 10000
+        },
+        "sessionization_runs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "record_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "record_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "version": {
+                "const": "participant-sessionizer-1.0.0"
+              },
+              "input_event_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "maxItems": 10000
+              },
+              "input_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "gap_seconds": {
+                    "const": 1800
+                  },
+                  "clock_basis": {
+                    "const": "PROVIDER_OUTCOME_TIME"
+                  },
+                  "order": {
+                    "const": [
+                      "occurred_at",
+                      "source_ordinal",
+                      "event_key"
+                    ]
+                  }
+                },
+                "required": [
+                  "gap_seconds",
+                  "clock_basis",
+                  "order"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "record_id",
+              "record_hash",
+              "version",
+              "input_event_refs",
+              "input_hash",
+              "parameters"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 1
+        },
+        "sessions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "record_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "record_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "run_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "session_key": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "event_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "maxItems": 10000
+              },
+              "transitions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "from_event_ref": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    "to_event_ref": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    "gap_ms": {
+                      "type": "integer"
+                    },
+                    "order_quality": {
+                      "enum": [
+                        "PROVIDER_TIME_ORDER",
+                        "DETERMINISTIC_TIE_UNCERTAIN"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "from_event_ref",
+                    "to_event_ref",
+                    "gap_ms",
+                    "order_quality"
+                  ],
+                  "additionalProperties": false
+                },
+                "maxItems": 9999
+              },
+              "time_quality": {
+                "const": "PROVIDER_TIMES_WITH_UNCERTAIN_STARTS"
+              }
+            },
+            "required": [
+              "record_id",
+              "record_hash",
+              "run_id",
+              "session_key",
+              "event_refs",
+              "transitions",
+              "time_quality"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 10000
+        },
+        "followup_selections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "record_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "record_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "prompt_packet_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "neutral_lock_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "selected_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+              },
+              "sequence": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 86400000
+              },
+              "policy_version": {
+                "const": "h6-context-plus-balanced-domain-1.0.0"
+              },
+              "bank_version": {
+                "const": "h6-followups-1.0.0"
+              },
+              "bank_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "eligible_question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "maxItems": 3
+              },
+              "selected_question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "maxItems": 3
+              },
+              "not_selected_question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "maxItems": 3
+              },
+              "ineligible_question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "maxItems": 3
+              }
+            },
+            "required": [
+              "record_id",
+              "record_hash",
+              "prompt_packet_id",
+              "neutral_lock_id",
+              "selected_at",
+              "sequence",
+              "policy_version",
+              "bank_version",
+              "bank_hash",
+              "eligible_question_ids",
+              "selected_question_ids",
+              "not_selected_question_ids",
+              "ineligible_question_ids"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 10000
+        },
+        "followup_exposures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "record_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "record_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "prompt_packet_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "neutral_lock_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "selection_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "shown_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+              },
+              "sequence": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 86400000
+              },
+              "rendered_question": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "record_id",
+              "record_hash",
+              "prompt_packet_id",
+              "neutral_lock_id",
+              "selection_id",
+              "shown_at",
+              "sequence",
+              "rendered_question"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 20000
+        },
+        "followup_submissions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "record_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "record_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "prompt_packet_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "neutral_lock_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "submitted_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+              },
+              "locked_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+              },
+              "sequence": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 86400000
+              },
+              "answers": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "question_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                    },
+                    "question_version": {
+                      "const": "1.0.0"
+                    },
+                    "value": {
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "question_id",
+                    "question_version",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                "maxItems": 2
+              }
+            },
+            "required": [
+              "record_id",
+              "record_hash",
+              "prompt_packet_id",
+              "neutral_lock_id",
+              "submitted_at",
+              "locked_at",
+              "sequence",
+              "answers"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 10000
+        },
+        "followup_completions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "record_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "record_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "prompt_packet_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "neutral_lock_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "completed_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+              },
+              "sequence": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 86400000
+              },
+              "policy_version": {
+                "const": "h6-context-plus-balanced-domain-1.0.0"
+              },
+              "bank_version": {
+                "const": "h6-followups-1.0.0"
+              },
+              "bank_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "eligible_question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "maxItems": 3
+              },
+              "selected_question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "maxItems": 3
+              },
+              "not_selected_question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "maxItems": 3
+              },
+              "ineligible_question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "maxItems": 3
+              },
+              "shown_question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "maxItems": 2
+              },
+              "skipped_question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "maxItems": 2
+              },
+              "answered_question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "maxItems": 2
+              },
+              "declined_or_uncertain_question_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+                },
+                "maxItems": 2
+              }
+            },
+            "required": [
+              "record_id",
+              "record_hash",
+              "prompt_packet_id",
+              "neutral_lock_id",
+              "completed_at",
+              "sequence",
+              "policy_version",
+              "bank_version",
+              "bank_hash",
+              "eligible_question_ids",
+              "selected_question_ids",
+              "not_selected_question_ids",
+              "ineligible_question_ids",
+              "shown_question_ids",
+              "skipped_question_ids",
+              "answered_question_ids",
+              "declined_or_uncertain_question_ids"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 10000
+        },
+        "availability": {
+          "type": "object",
+          "properties": {
+            "event_evidence": {
+              "enum": [
+                "INCLUDED",
+                "WITHHELD"
+              ]
+            },
+            "playlist_context": {
+              "enum": [
+                "INCLUDED",
+                "WITHHELD"
+              ]
+            },
+            "followup_evidence": {
+              "enum": [
+                "INCLUDED",
+                "WITHHELD"
+              ]
+            },
+            "unavailable_analyses": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "EXTENDED_EVENT_AND_SESSION_COMPARISONS",
+                  "PLAYLIST_CONTEXT_COMPARISONS",
+                  "PARTICIPANT_CONTEXT_AND_MOMENT_REPORTS",
+                  "PRECISE_LYRIC_EXPOSURE"
+                ]
+              },
+              "maxItems": 4
+            }
+          },
+          "required": [
+            "event_evidence",
+            "playlist_context",
+            "followup_evidence",
+            "unavailable_analyses"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "consent",
+        "event_evidence",
+        "sessionization_runs",
+        "sessions",
+        "followup_selections",
+        "followup_exposures",
+        "followup_submissions",
+        "followup_completions",
+        "availability"
+      ],
+      "additionalProperties": false
+    },
+    "export_preview": {
+      "type": "object",
+      "properties": {
+        "presented_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "notice": {
+          "type": "string",
+          "maxLength": 4000
+        },
+        "core_integrity_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "extension_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$"
+              },
+              "count": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 86400000
+              },
+              "records_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "name",
+              "count",
+              "records_hash"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 20
+        }
+      },
+      "required": [
+        "presented_at",
+        "notice",
+        "core_integrity_hash",
+        "extension_hash",
+        "sections"
+      ],
+      "additionalProperties": false
+    },
+    "export_authorization": {
+      "type": "object",
+      "properties": {
+        "explicitly_confirmed": {
+          "const": true
+        },
+        "confirmed_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
+        },
+        "preview_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "recipient_fingerprint": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "explicitly_confirmed",
+        "confirmed_at",
+        "preview_hash",
+        "recipient_fingerprint"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "manifest",
+    "core",
+    "extension",
+    "export_preview",
+    "export_authorization"
+  ],
+  "additionalProperties": false
+}

@@ -59,10 +59,11 @@ def opportunity(reason_start,shuffle):
     if shuffle is True:return 'SHUFFLE'
     return 'UNKNOWN'
 
-def parse(payload,is_zip,imported_at,start=None,end=None):
+def parse(payload,is_zip,imported_at,start=None,end=None,capture_h6=False):
     if start and end and start>end:raise ValueError('History end date precedes start')
     if start:datetime.strptime(start,'%Y-%m-%d')
     if end:datetime.strptime(end,'%Y-%m-%d')
+    h6_events=[]
     imports=[];tracks={};events=[];seen_fingerprints=set();seen_files=set();skipped=0;duplicates=0
     for raw in sorted(files(payload,is_zip),key=lambda b:byte_sha(b).hexdigest()):
         file_hash=byte_sha(raw).hexdigest()
@@ -82,7 +83,7 @@ def parse(payload,is_zip,imported_at,start=None,end=None):
             date=timestamp(raw_time,legacy);occurred=stamp(date)
             if start and occurred[:10]<start or end and occurred[:10]>end:continue
             if occurred>imported_at:raise ValueError('Playback appears after actual import time; check your device clock')
-            if any(k in row and row[k] is not None and row[k]!='' for k in UNSUPPORTED_EVIDENCE):
+            if not capture_h6 and any(k in row and row[k] is not None and row[k]!='' for k in UNSUPPORTED_EVIDENCE):
                 raise ValueError('This history includes track duration or playback context that the current study format cannot preserve. Import cancelled without saving. Keep your original file and ask your researcher for a compatible study release.')
             played=row.get('msPlayed') if legacy else row.get('ms_played')
             if type(played) is not int or not 0<=played<=86400000:raise ValueError('Invalid ms_played')
@@ -106,10 +107,19 @@ def parse(payload,is_zip,imported_at,start=None,end=None):
                 'source_available_at':imported_at,'played_ms':played,'skipped':skipped_value,'reason_start':reason('reason_start'),'reason_end':reason('reason_end'),
                 'shuffle':shuffle,'opportunity':opportunity(row.get('reason_start'),shuffle)}
             fingerprint=sha256({k:v for k,v in event.items() if k not in {'record_id','event_key','import_id','source_ordinal','source_available_at'}})
+            evidence=None
+            if capture_h6:
+                from contracts.h6_bundle.v1.capture import event_evidence,SCHEMA
+                from jsonschema import Draft202012Validator
+                evidence=event_evidence(row,event,file_hash)
+                native_schema=SCHEMA['properties']['extension']['properties']['event_evidence']['items']['properties']['native']
+                if not Draft202012Validator(native_schema).is_valid(evidence['native']):raise ValueError('Invalid H6 provider evidence')
+                fingerprint=sha256({'core':fingerprint,'native':evidence['native']})
             if fingerprint in seen_fingerprints:duplicates+=1;continue
             seen_fingerprints.add(fingerprint);selected.append(event)
+            if evidence:h6_events.append(evidence)
         if selected:
-            imports.append({'record_id':'import-'+file_hash,'provider':'SPOTIFY','source_file_sha256':file_hash,'parser_version':'spotify-offline-1.0.1',
+            imports.append({'record_id':'import-'+file_hash,'provider':'SPOTIFY','source_file_sha256':file_hash,'parser_version':'spotify-h6-1.0.0' if capture_h6 else 'spotify-offline-1.0.1',
                 'actual_imported_at':imported_at,'coverage_start_at':min(e['occurred_at'] for e in selected),'coverage_end_at':max(e['occurred_at'] for e in selected)})
             events.extend(selected)
     if not events:raise ValueError('No music plays in this history/date range')
@@ -117,4 +127,4 @@ def parse(payload,is_zip,imported_at,start=None,end=None):
     if len(events)<3:raise ValueError('At least three music plays are needed')
     used={e['track_id'] for e in events}
     events.sort(key=lambda e:(e['occurred_at'],e['source_ordinal'],e['event_key']))
-    return {'history_imports':imports,'tracks':[t for key,t in sorted(tracks.items()) if key in used],'events':events,'summary':{'music_events':len(events),'non_music_ignored':skipped,'duplicates_ignored':duplicates}}
+    return {'history_imports':imports,'tracks':[t for key,t in sorted(tracks.items()) if key in used],'events':events,**({'h6_event_evidence':h6_events} if capture_h6 else {}),'summary':{'music_events':len(events),'non_music_ignored':skipped,'duplicates_ignored':duplicates}}

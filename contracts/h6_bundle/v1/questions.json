@@ -1,0 +1,560 @@
+{
+  "version": "h6-followups-1.0.0",
+  "status": "RETROSPECTIVE_PILOT_NOT_PREREGISTERED",
+  "neutral_bank": "neutral-retro-1.0.0",
+  "neutral_bank_file_sha256": "d310e32487c6570613b0316aae819f06e6b9299f8208a7d61749e8a5f2958b4d",
+  "max_followups": 2,
+  "questions": [
+    {
+      "question_id": "h6.context",
+      "version": "1.0.0",
+      "domain": "CONTEXT",
+      "text": "What, if anything, do you remember doing during this listening period?",
+      "required": false,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "ANSWERED",
+              "DONT_RECALL",
+              "UNSURE",
+              "DECLINED"
+            ]
+          },
+          "activities": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "COMMUTING",
+                "WORK_STUDY",
+                "EXERCISE",
+                "RELAXING",
+                "ACTIVE_LISTENING",
+                "OTHER",
+                "UNSURE"
+              ]
+            },
+            "uniqueItems": true,
+            "maxItems": 7
+          },
+          "attention": {
+            "enum": [
+              "BACKGROUND",
+              "SOME_ATTENTION",
+              "MOST_ATTENTION",
+              "VARIED",
+              "UNSURE"
+            ]
+          },
+          "manual_control": {
+            "enum": [
+              "YES",
+              "NO",
+              "SOME",
+              "UNSURE"
+            ]
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4000
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "presentation": {
+        "components": [
+          {
+            "key": "status",
+            "label": "Response",
+            "kind": "CHOICE",
+            "required": true,
+            "options": [
+              {
+                "value": "ANSWERED",
+                "label": "I would like to add something"
+              },
+              {
+                "value": "DONT_RECALL",
+                "label": "I don't remember"
+              },
+              {
+                "value": "UNSURE",
+                "label": "I am unsure"
+              },
+              {
+                "value": "DECLINED",
+                "label": "I prefer not to answer"
+              }
+            ]
+          },
+          {
+            "key": "activities",
+            "label": "Activities (optional)",
+            "kind": "MULTI_CHOICE",
+            "required": false,
+            "options": [
+              {
+                "value": "COMMUTING",
+                "label": "Commuting"
+              },
+              {
+                "value": "WORK_STUDY",
+                "label": "Working or studying"
+              },
+              {
+                "value": "EXERCISE",
+                "label": "Exercising"
+              },
+              {
+                "value": "RELAXING",
+                "label": "Relaxing"
+              },
+              {
+                "value": "ACTIVE_LISTENING",
+                "label": "Actively listening"
+              },
+              {
+                "value": "OTHER",
+                "label": "Other"
+              },
+              {
+                "value": "UNSURE",
+                "label": "Unsure / don't recall"
+              }
+            ]
+          },
+          {
+            "key": "attention",
+            "label": "Remembered attention (optional)",
+            "kind": "CHOICE",
+            "required": false,
+            "options": [
+              {
+                "value": "BACKGROUND",
+                "label": "Mostly in the background"
+              },
+              {
+                "value": "SOME_ATTENTION",
+                "label": "Some attention"
+              },
+              {
+                "value": "MOST_ATTENTION",
+                "label": "Most of my attention"
+              },
+              {
+                "value": "VARIED",
+                "label": "It varied"
+              },
+              {
+                "value": "UNSURE",
+                "label": "Unsure / don't recall"
+              }
+            ]
+          },
+          {
+            "key": "manual_control",
+            "label": "Do you remember manually controlling playback? (optional)",
+            "kind": "CHOICE",
+            "required": false,
+            "options": [
+              {
+                "value": "YES",
+                "label": "Yes"
+              },
+              {
+                "value": "NO",
+                "label": "No"
+              },
+              {
+                "value": "SOME",
+                "label": "Some of the time"
+              },
+              {
+                "value": "UNSURE",
+                "label": "Unsure / don't recall"
+              }
+            ]
+          },
+          {
+            "key": "description",
+            "label": "Anything else you remember (optional)",
+            "kind": "TEXT",
+            "required": false,
+            "options": []
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "h6.skipping",
+      "version": "1.0.0",
+      "domain": "SKIPPING",
+      "text": "Do you remember moving past any of the tracks in this period? This may or may not have been deliberate.",
+      "required": false,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "ANSWERED",
+              "DONT_RECALL",
+              "UNSURE",
+              "DECLINED"
+            ]
+          },
+          "recall": {
+            "enum": [
+              "YES",
+              "NO",
+              "DONT_RECALL",
+              "UNSURE"
+            ]
+          },
+          "reasons": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "DID_NOT_FIT",
+                "SOMETHING_ELSE",
+                "SOUND_SECTION",
+                "INTERRUPTION",
+                "HABIT",
+                "ACCIDENT",
+                "OTHER",
+                "DONT_RECALL"
+              ]
+            },
+            "uniqueItems": true,
+            "maxItems": 8
+          },
+          "track_ref": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 512
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4000
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "presentation": {
+        "components": [
+          {
+            "key": "status",
+            "label": "Response",
+            "kind": "CHOICE",
+            "required": true,
+            "options": [
+              {
+                "value": "ANSWERED",
+                "label": "I would like to add something"
+              },
+              {
+                "value": "DONT_RECALL",
+                "label": "I don't remember"
+              },
+              {
+                "value": "UNSURE",
+                "label": "I am unsure"
+              },
+              {
+                "value": "DECLINED",
+                "label": "I prefer not to answer"
+              }
+            ]
+          },
+          {
+            "key": "recall",
+            "label": "What do you remember? (optional)",
+            "kind": "CHOICE",
+            "required": false,
+            "options": [
+              {
+                "value": "YES",
+                "label": "Yes"
+              },
+              {
+                "value": "NO",
+                "label": "No"
+              },
+              {
+                "value": "DONT_RECALL",
+                "label": "I don't remember"
+              },
+              {
+                "value": "UNSURE",
+                "label": "I am unsure"
+              }
+            ]
+          },
+          {
+            "key": "reasons",
+            "label": "If remembered, what happened? (optional; more than one may apply)",
+            "kind": "MULTI_CHOICE",
+            "required": false,
+            "options": [
+              {
+                "value": "DID_NOT_FIT",
+                "label": "The music did not fit what I wanted at that moment"
+              },
+              {
+                "value": "SOMETHING_ELSE",
+                "label": "I wanted to hear something else"
+              },
+              {
+                "value": "SOUND_SECTION",
+                "label": "A particular sound or section did not appeal"
+              },
+              {
+                "value": "INTERRUPTION",
+                "label": "Distraction or interruption"
+              },
+              {
+                "value": "HABIT",
+                "label": "Habitual skipping"
+              },
+              {
+                "value": "ACCIDENT",
+                "label": "Accidental interaction"
+              },
+              {
+                "value": "OTHER",
+                "label": "Other"
+              },
+              {
+                "value": "DONT_RECALL",
+                "label": "I don't remember"
+              }
+            ]
+          },
+          {
+            "key": "track_ref",
+            "label": "Track, if remembered (optional)",
+            "kind": "TEXT",
+            "required": false,
+            "options": []
+          },
+          {
+            "key": "description",
+            "label": "Anything else you remember (optional)",
+            "kind": "TEXT",
+            "required": false,
+            "options": []
+          }
+        ]
+      }
+    },
+    {
+      "question_id": "h6.moment",
+      "version": "1.0.0",
+      "domain": "MOMENT",
+      "text": "Did anything specific stand out in music you continued listening to, or did nothing specific stand out?",
+      "required": false,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "ANSWERED",
+              "DONT_RECALL",
+              "UNSURE",
+              "DECLINED"
+            ]
+          },
+          "kinds": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "LYRIC",
+                "TRANSITION",
+                "VOCAL",
+                "RHYTHM_INSTRUMENTS",
+                "MEMORY",
+                "ATMOSPHERE",
+                "NOTHING",
+                "UNSURE"
+              ]
+            },
+            "uniqueItems": true,
+            "maxItems": 8
+          },
+          "track_ref": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 512
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4000
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "approximate_start_seconds": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 86400
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "approximate_end_seconds": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 86400
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "presentation": {
+        "components": [
+          {
+            "key": "status",
+            "label": "Response",
+            "kind": "CHOICE",
+            "required": true,
+            "options": [
+              {
+                "value": "ANSWERED",
+                "label": "I would like to add something"
+              },
+              {
+                "value": "DONT_RECALL",
+                "label": "I don't remember"
+              },
+              {
+                "value": "UNSURE",
+                "label": "I am unsure"
+              },
+              {
+                "value": "DECLINED",
+                "label": "I prefer not to answer"
+              }
+            ]
+          },
+          {
+            "key": "kinds",
+            "label": "What, if anything, stood out? (optional)",
+            "kind": "MULTI_CHOICE",
+            "required": false,
+            "options": [
+              {
+                "value": "LYRIC",
+                "label": "A particular lyric or phrase"
+              },
+              {
+                "value": "TRANSITION",
+                "label": "A musical buildup or transition"
+              },
+              {
+                "value": "VOCAL",
+                "label": "Vocal delivery"
+              },
+              {
+                "value": "RHYTHM_INSTRUMENTS",
+                "label": "Instrumentation or rhythm"
+              },
+              {
+                "value": "MEMORY",
+                "label": "A personal memory or association"
+              },
+              {
+                "value": "ATMOSPHERE",
+                "label": "The overall atmosphere"
+              },
+              {
+                "value": "NOTHING",
+                "label": "Nothing specific"
+              },
+              {
+                "value": "UNSURE",
+                "label": "Unsure"
+              }
+            ]
+          },
+          {
+            "key": "track_ref",
+            "label": "Track, if remembered (optional)",
+            "kind": "TEXT",
+            "required": false,
+            "options": []
+          },
+          {
+            "key": "description",
+            "label": "Describe the moment in your own words (optional)",
+            "kind": "TEXT",
+            "required": false,
+            "options": []
+          },
+          {
+            "key": "approximate_start_seconds",
+            "label": "Approximate song position or interval start in seconds (optional; leave blank if unsure)",
+            "kind": "APPROXIMATE_SECONDS",
+            "required": false,
+            "options": []
+          },
+          {
+            "key": "approximate_end_seconds",
+            "label": "Approximate interval end in seconds (optional)",
+            "kind": "APPROXIMATE_SECONDS",
+            "required": false,
+            "options": []
+          }
+        ]
+      }
+    }
+  ]
+}

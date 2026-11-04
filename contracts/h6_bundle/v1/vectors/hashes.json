@@ -1,0 +1,17 @@
+[
+  {
+    "fixture": "fixtures/valid-full.json",
+    "content_hash": "e5604bf2770f7383e23685d7d2d15dd609f42d6e1c6820ceaabc35aa120eb9b2",
+    "integrity_hash": "6e6ddb07f60cb42ad54dc444535574dbac69689e2b360b3cb568cc748f3cbb11"
+  },
+  {
+    "fixture": "fixtures/valid-responses-only.json",
+    "content_hash": "4b88a1979cc73d58bc010975ec348e0723b621985aa3af3e5761102cfa1b3283",
+    "integrity_hash": "45efd2c40b8c0a757bb2457cc955d2c90f2f61f8d1fd0f7a577427449ca730f7"
+  },
+  {
+    "fixture": "fixtures/valid-withheld.json",
+    "content_hash": "7a00537ee17e4d75b7201488eff4ff33cc82140da30c58f2fea2708fed2c0afd",
+    "integrity_hash": "1794c70a9983fa5403c219cd1f291c49be4030754e5737537a8524b9a6077107"
+  }
+]

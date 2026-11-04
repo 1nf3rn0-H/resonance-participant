@@ -1,0 +1,12 @@
+{
+  "version": "h6-consent-1.0.0",
+  "protocol_version": "offline-retro-h6-1.0.0-pilot",
+  "status": "PILOT_NOT_PREREGISTERED",
+  "statements": [
+    "I agree to local H6 collection of provider-supplied recording duration, playback context (including playlist names if supplied), ordered sessions, and optional contextual follow-up answers.",
+    "Skipping and non-skipping do not establish preference or psychological function. No psychological classification is generated during collection.",
+    "My two neutral answers are locked before optional follow-ups; at most two follow-ups are offered. Approximate musical positions are optional participant reports, not measured exposure.",
+    "Sharing H6 follow-up evidence, extended event/session evidence, and playlist context are separate choices. Only selected sections enter the full export preview; exporting requires a final explicit confirmation.",
+    "After transfer, local deletion cannot remove researcher-held copies or backups. Contact the researcher for withdrawal; backup retention and already disseminated anonymous results may limit deletion."
+  ]
+}

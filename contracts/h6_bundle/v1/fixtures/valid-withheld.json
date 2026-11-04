@@ -1,0 +1,1264 @@
+{
+  "manifest": {
+    "format": "resonance-h6-bundle",
+    "schema_version": "1.0.0",
+    "protocol_version": "offline-retro-h6-1.0.0-pilot",
+    "bundle_id": "h6-fixture-full",
+    "generated_at": "2026-10-30T12:10:00.000Z",
+    "core_integrity_hash": "80859672a7ab37b5d828885c8697e332cb963e41c03cf957cb4feafea55b8fd6",
+    "contract_release_hash": "6cdefd78e3c5b08475254a99a008d293ec2c61ec331dabeaaf51967329aeb986",
+    "question_bank_hash": "4cda7254791b476c2d6e4cb3c7230f854fee9545604b14c9d206c29a9a81e6c9",
+    "content_hash": "7a00537ee17e4d75b7201488eff4ff33cc82140da30c58f2fea2708fed2c0afd",
+    "integrity_hash": "1794c70a9983fa5403c219cd1f291c49be4030754e5737537a8524b9a6077107"
+  },
+  "core": {
+    "manifest": {
+      "format": "resonance-bundle",
+      "schema_version": "1.0.0",
+      "bundle_id": "h6-fixture-full",
+      "study_id": "resonance-contract-fixtures",
+      "participant_pseudonym": "fixture-person",
+      "protocol_version": "offline-retro-mvp-1.0.0-draft",
+      "temporal_mode": "RETROSPECTIVE_REPLAY",
+      "trial_type": "THREE_ARM_PILOT",
+      "app_release": "participant-contract-fixture-1.0.0",
+      "generated_at": "2026-10-30T12:10:00.000Z",
+      "previous_bundle_id": null,
+      "export_scope": "HISTORY_AND_RESPONSES",
+      "question_bank_hash": "bda30442886c2eb39b9c888609560c10ec633c34e9a15666dc63010450173c55",
+      "sampling_config_hash": "8e890b8c9f5117ee5ae0ee90fcd456be449f2ab49a55f9c44936c26fae512d88",
+      "content_hash": "b54522272bc7547d87198c403557bd9beb627ee296152aa98adc460597536c26",
+      "integrity_hash": "80859672a7ab37b5d828885c8697e332cb963e41c03cf957cb4feafea55b8fd6",
+      "test_only": true
+    },
+    "consent": {
+      "record_id": "consent-1",
+      "record_hash": "edde5a0c1220753443a6c3fbc19a6b879a250de42c8980522b225b717374a1a7",
+      "version": "offline-consent-1.0.0",
+      "form_hash": "d783db44d696ce25b20b04bda748c64da4668c41d506a2cabc9bdf8587f216f2",
+      "accepted_at": "2026-10-30T11:00:00.000Z",
+      "grants": {
+        "share_responses": true,
+        "share_listening_history": true
+      },
+      "withdrawal_notice_version": "offline-withdrawal-1.0.0"
+    },
+    "provenance": {
+      "source_data_status": "INCLUDED",
+      "input_manifest_hash": "be8805ca243a92565fde4b20e8df6c3493a40b60431eafe3a2f1e0f69b2e88ab",
+      "source_coverage_start_at": "2026-03-01T10:00:00.000Z",
+      "source_coverage_end_at": "2026-03-01T10:14:00.000Z",
+      "sampling_cutoff_at": "2026-10-30T11:10:00.000Z",
+      "participant_clock_status": "DEVICE_REPORTED_NOT_INDEPENDENTLY_VERIFIED",
+      "sampling_seed": "contract-seed-1",
+      "seed_commitment": "042bb0e54a34d48d13e06f6832f1c32f97b98bfe65803dda2d96f0f0ef594038"
+    },
+    "history_imports": [
+      {
+        "record_id": "import-1",
+        "record_hash": "9c67b581be8caa4858430b09d83e00d4c017568e436c7b81cb3df660f5cdc8e0",
+        "provider": "SPOTIFY",
+        "source_file_sha256": "a524de388c49af09adedea69d51d4585fdb48d6b9fea728802ada1f20ad5fbef",
+        "parser_version": "spotify-fixture-1",
+        "actual_imported_at": "2026-10-30T11:01:00.000Z",
+        "coverage_start_at": "2026-03-01T10:00:00.000Z",
+        "coverage_end_at": "2026-03-01T10:14:00.000Z"
+      }
+    ],
+    "tracks": [
+      {
+        "record_id": "track-1",
+        "record_hash": "8d7663043cd23cb5331e907362b93f303510c55f3a0dab15ddf0c7b5476a59e3",
+        "provider_ref": "spotify:track:synthetic-contract-track",
+        "title": "Synthetic listening fixture",
+        "artist": "Contract fixture artist"
+      }
+    ],
+    "events": [
+      {
+        "record_id": "event-0",
+        "record_hash": "87876bc52da530d45d4b67ede1a567fa69af553384858bd55248ba092f1c07f6",
+        "import_id": "import-1",
+        "track_id": "track-1",
+        "event_key": "23a6abed8d3abac990a24073c82ea23e56e3bd0b89c3c5cc6faa3ae6b3d19379",
+        "source_ordinal": 0,
+        "provider_timestamp_raw": "2026-03-01T10:00:00.000Z",
+        "provider_timestamp_semantics": "END",
+        "occurred_at": "2026-03-01T10:00:00.000Z",
+        "observed_start_at": null,
+        "observed_end_at": "2026-03-01T10:00:00.000Z",
+        "estimated_start_at": "2026-03-01T09:59:00.000Z",
+        "estimated_end_at": null,
+        "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+        "time_quality": "ESTIMATED",
+        "source_available_at": "2026-10-30T11:01:00.000Z",
+        "played_ms": 60000,
+        "skipped": null,
+        "reason_start": null,
+        "reason_end": null,
+        "shuffle": null,
+        "opportunity": "UNKNOWN"
+      },
+      {
+        "record_id": "event-1",
+        "record_hash": "74dcabf3353eb8b38b578de4141f17637cf94db43d944c0cc0c14eb760df7860",
+        "import_id": "import-1",
+        "track_id": "track-1",
+        "event_key": "0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+        "source_ordinal": 1,
+        "provider_timestamp_raw": "2026-03-01T10:02:00.000Z",
+        "provider_timestamp_semantics": "END",
+        "occurred_at": "2026-03-01T10:02:00.000Z",
+        "observed_start_at": null,
+        "observed_end_at": "2026-03-01T10:02:00.000Z",
+        "estimated_start_at": "2026-03-01T10:01:00.000Z",
+        "estimated_end_at": null,
+        "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+        "time_quality": "ESTIMATED",
+        "source_available_at": "2026-10-30T11:01:00.000Z",
+        "played_ms": 60000,
+        "skipped": false,
+        "reason_start": null,
+        "reason_end": null,
+        "shuffle": null,
+        "opportunity": "UNKNOWN"
+      },
+      {
+        "record_id": "event-2",
+        "record_hash": "8a1e8dca0eece445390270a9834c969ed022f7fac486a68ed690e9da48e2cdac",
+        "import_id": "import-1",
+        "track_id": "track-1",
+        "event_key": "0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+        "source_ordinal": 2,
+        "provider_timestamp_raw": "2026-03-01T10:04:00.000Z",
+        "provider_timestamp_semantics": "END",
+        "occurred_at": "2026-03-01T10:04:00.000Z",
+        "observed_start_at": null,
+        "observed_end_at": "2026-03-01T10:04:00.000Z",
+        "estimated_start_at": "2026-03-01T10:03:00.000Z",
+        "estimated_end_at": null,
+        "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+        "time_quality": "ESTIMATED",
+        "source_available_at": "2026-10-30T11:01:00.000Z",
+        "played_ms": 60000,
+        "skipped": false,
+        "reason_start": null,
+        "reason_end": null,
+        "shuffle": null,
+        "opportunity": "UNKNOWN"
+      },
+      {
+        "record_id": "event-3",
+        "record_hash": "d3e7ccff6c45edd9be1d2bb0ad0908ac6fab8c3090745c031604aa80bf2a7188",
+        "import_id": "import-1",
+        "track_id": "track-1",
+        "event_key": "897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36",
+        "source_ordinal": 3,
+        "provider_timestamp_raw": "2026-03-01T10:06:00.000Z",
+        "provider_timestamp_semantics": "END",
+        "occurred_at": "2026-03-01T10:06:00.000Z",
+        "observed_start_at": null,
+        "observed_end_at": "2026-03-01T10:06:00.000Z",
+        "estimated_start_at": "2026-03-01T10:05:00.000Z",
+        "estimated_end_at": null,
+        "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+        "time_quality": "ESTIMATED",
+        "source_available_at": "2026-10-30T11:01:00.000Z",
+        "played_ms": 60000,
+        "skipped": true,
+        "reason_start": null,
+        "reason_end": null,
+        "shuffle": null,
+        "opportunity": "UNKNOWN"
+      },
+      {
+        "record_id": "event-4",
+        "record_hash": "aa3f404adb4518878710af8427273c9ad68d6045d29ce1ed73ce0cabf1c4e046",
+        "import_id": "import-1",
+        "track_id": "track-1",
+        "event_key": "b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+        "source_ordinal": 4,
+        "provider_timestamp_raw": "2026-03-01T10:08:00.000Z",
+        "provider_timestamp_semantics": "END",
+        "occurred_at": "2026-03-01T10:08:00.000Z",
+        "observed_start_at": null,
+        "observed_end_at": "2026-03-01T10:08:00.000Z",
+        "estimated_start_at": "2026-03-01T10:07:00.000Z",
+        "estimated_end_at": null,
+        "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+        "time_quality": "ESTIMATED",
+        "source_available_at": "2026-10-30T11:01:00.000Z",
+        "played_ms": 60000,
+        "skipped": false,
+        "reason_start": null,
+        "reason_end": null,
+        "shuffle": null,
+        "opportunity": "UNKNOWN"
+      },
+      {
+        "record_id": "event-5",
+        "record_hash": "5ac446149d59c383187b252fff31fc223158a49ed5129b072f5fe77b5b27a5ce",
+        "import_id": "import-1",
+        "track_id": "track-1",
+        "event_key": "80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+        "source_ordinal": 5,
+        "provider_timestamp_raw": "2026-03-01T10:10:00.000Z",
+        "provider_timestamp_semantics": "END",
+        "occurred_at": "2026-03-01T10:10:00.000Z",
+        "observed_start_at": null,
+        "observed_end_at": "2026-03-01T10:10:00.000Z",
+        "estimated_start_at": "2026-03-01T10:09:00.000Z",
+        "estimated_end_at": null,
+        "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+        "time_quality": "ESTIMATED",
+        "source_available_at": "2026-10-30T11:01:00.000Z",
+        "played_ms": 60000,
+        "skipped": false,
+        "reason_start": null,
+        "reason_end": null,
+        "shuffle": null,
+        "opportunity": "UNKNOWN"
+      },
+      {
+        "record_id": "event-6",
+        "record_hash": "fae733452ddee29c119bfd9db49d698537197b429a16440d22c0e8531dd66db4",
+        "import_id": "import-1",
+        "track_id": "track-1",
+        "event_key": "41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+        "source_ordinal": 6,
+        "provider_timestamp_raw": "2026-03-01T10:12:00.000Z",
+        "provider_timestamp_semantics": "END",
+        "occurred_at": "2026-03-01T10:12:00.000Z",
+        "observed_start_at": null,
+        "observed_end_at": "2026-03-01T10:12:00.000Z",
+        "estimated_start_at": "2026-03-01T10:11:00.000Z",
+        "estimated_end_at": null,
+        "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+        "time_quality": "ESTIMATED",
+        "source_available_at": "2026-10-30T11:01:00.000Z",
+        "played_ms": 60000,
+        "skipped": true,
+        "reason_start": null,
+        "reason_end": null,
+        "shuffle": null,
+        "opportunity": "UNKNOWN"
+      },
+      {
+        "record_id": "event-7",
+        "record_hash": "07a46456ed46074875db5ee3d9030e461afd86022c1af089430498d250929b25",
+        "import_id": "import-1",
+        "track_id": "track-1",
+        "event_key": "bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9",
+        "source_ordinal": 7,
+        "provider_timestamp_raw": "2026-03-01T10:14:00.000Z",
+        "provider_timestamp_semantics": "END",
+        "occurred_at": "2026-03-01T10:14:00.000Z",
+        "observed_start_at": null,
+        "observed_end_at": "2026-03-01T10:14:00.000Z",
+        "estimated_start_at": "2026-03-01T10:13:00.000Z",
+        "estimated_end_at": null,
+        "time_estimation_method": "END_MINUS_PLAYED_ESTIMATE",
+        "time_quality": "ESTIMATED",
+        "source_available_at": "2026-10-30T11:01:00.000Z",
+        "played_ms": 60000,
+        "skipped": false,
+        "reason_start": null,
+        "reason_end": null,
+        "shuffle": null,
+        "opportunity": "UNKNOWN"
+      }
+    ],
+    "episode_snapshots": [
+      {
+        "record_id": "episode-0",
+        "record_hash": "a64b93e3343abb885188d93acd848cafa7efc1afa9370c9b04c483e0232b72e8",
+        "episode_key": "3420243652a0b4d7dc9a623c2e9e1f255d58d751b60938892262933f938b6788",
+        "historical_start_at": "2026-03-01T10:00:00.000Z",
+        "historical_end_at": "2026-03-01T10:06:00.000Z",
+        "episode_available_at": "2026-10-30T11:11:00.000Z",
+        "time_quality": "ESTIMATED",
+        "event_refs": [
+          "23a6abed8d3abac990a24073c82ea23e56e3bd0b89c3c5cc6faa3ae6b3d19379",
+          "0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+          "0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+          "897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36"
+        ],
+        "display_tracks": [
+          {
+            "title": "Synthetic listening fixture",
+            "artist": "Contract fixture artist"
+          }
+        ],
+        "source_data_status": "INCLUDED"
+      },
+      {
+        "record_id": "episode-1",
+        "record_hash": "5ef01c3a2280cf70c5af426856c84b22ac4c4eed5182adb54a12e920a7fc5488",
+        "episode_key": "f359c45d214508e1384a495c9948da1b80b2d246955f16bae43121e8bd488931",
+        "historical_start_at": "2026-03-01T10:08:00.000Z",
+        "historical_end_at": "2026-03-01T10:14:00.000Z",
+        "episode_available_at": "2026-10-30T11:11:00.000Z",
+        "time_quality": "ESTIMATED",
+        "event_refs": [
+          "b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+          "80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+          "41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+          "bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9"
+        ],
+        "display_tracks": [
+          {
+            "title": "Synthetic listening fixture",
+            "artist": "Contract fixture artist"
+          }
+        ],
+        "source_data_status": "INCLUDED"
+      }
+    ],
+    "eligible_windows": [
+      {
+        "record_id": "window-0",
+        "record_hash": "5c2c3ee5134eb4482010a62ba0377baa7f5e98cb9b701258a79f5c5913c5f0ec",
+        "episode_id": "episode-0",
+        "window_key": "cb307fbe8b41bdb014da45b13a6041fdf3e6c71a10cdd18f46cceb01c53be77c",
+        "event_refs": [
+          "23a6abed8d3abac990a24073c82ea23e56e3bd0b89c3c5cc6faa3ae6b3d19379",
+          "0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+          "0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+          "897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36"
+        ],
+        "eligibility": "ELIGIBLE",
+        "reasons": [
+          "COMMON_WINDOW"
+        ]
+      },
+      {
+        "record_id": "window-1",
+        "record_hash": "69cf005cae803a11752097595995e6ef661132434ca742aec308d194e1ae39f8",
+        "episode_id": "episode-1",
+        "window_key": "5403542eb54b21c87d70e0155b102267171196d112d7ec0a7cf6a86b2f8a6044",
+        "event_refs": [
+          "b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+          "80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+          "41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+          "bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9"
+        ],
+        "eligibility": "ELIGIBLE",
+        "reasons": [
+          "COMMON_WINDOW"
+        ]
+      }
+    ],
+    "native_candidates": [
+      {
+        "record_id": "native-0",
+        "record_hash": "fd6ba6e7bccf7fecaf9d0323a19218b942f31394ae15c2d071024473a1fd1997",
+        "candidate_key": "55a40653883ca9bd59267c3c2bdf440a1e15087547d10e18a19e64b37319d215",
+        "arm": "V0_3",
+        "algorithm_version": "music-episode-surfacing-0.3.0",
+        "implementation_hash": "460942391dee28c4abf46007008f6aed80be5ef156b971f5a5979e5611b90849",
+        "event_refs": [
+          "23a6abed8d3abac990a24073c82ea23e56e3bd0b89c3c5cc6faa3ae6b3d19379",
+          "0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+          "0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+          "897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36"
+        ],
+        "score": 2.0,
+        "reason_codes": [
+          "SYNTHETIC_FIXTURE"
+        ],
+        "prediction_as_of_at": null,
+        "training_coverage_end_at": null,
+        "target_outcome_at": null,
+        "native_payload": {
+          "fixture_only": true,
+          "original_score": 2.0,
+          "original_reason_codes": [
+            "SYNTHETIC_FIXTURE"
+          ]
+        }
+      },
+      {
+        "record_id": "native-1",
+        "record_hash": "50686b7bc22c7d7a659e7dbcc00dde9765afb3f93c1857d6b2f7d2e3f2882ead",
+        "candidate_key": "b6b4a21847130e00066717e5fef3ad4879c4a142cd50036abf747cb66d29766d",
+        "arm": "PED",
+        "algorithm_version": "music-episode-surfacing-0.5.1",
+        "implementation_hash": "460942391dee28c4abf46007008f6aed80be5ef156b971f5a5979e5611b90849",
+        "event_refs": [
+          "b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+          "80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+          "41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+          "bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9"
+        ],
+        "score": 3.0,
+        "reason_codes": [
+          "SYNTHETIC_FIXTURE"
+        ],
+        "prediction_as_of_at": "2026-03-01T09:59:00.000Z",
+        "training_coverage_end_at": null,
+        "target_outcome_at": "2026-03-01T10:00:00.000Z",
+        "native_payload": {
+          "fixture_only": true,
+          "original_score": 3.0,
+          "original_reason_codes": [
+            "SYNTHETIC_FIXTURE"
+          ]
+        }
+      }
+    ],
+    "mappings": [
+      {
+        "record_id": "mapping-window-0-RANDOM",
+        "record_hash": "6450c3273fe4afde42a5ce233bbdf616675123733c6f2f6e0b901cf141cebb68",
+        "window_id": "window-0",
+        "arm": "RANDOM",
+        "native_candidate_ids": [],
+        "mapped_score": 0.0
+      },
+      {
+        "record_id": "mapping-window-0-V0_3",
+        "record_hash": "bf91e936a8bead8eabdbf2b1d6e09004ee371bda775f859a9224dd7c79fdd4fc",
+        "window_id": "window-0",
+        "arm": "V0_3",
+        "native_candidate_ids": [
+          "native-0"
+        ],
+        "mapped_score": 1.0
+      },
+      {
+        "record_id": "mapping-window-0-PED",
+        "record_hash": "84e3bfb4d2e0ef1d8ae1aa25f81bf980990f9d0684f3f26ec43ebe5f7436a4a5",
+        "window_id": "window-0",
+        "arm": "PED",
+        "native_candidate_ids": [],
+        "mapped_score": 0.0
+      },
+      {
+        "record_id": "mapping-window-1-RANDOM",
+        "record_hash": "1fa05ffd61cd015e0f31612976f62bd6d6c7bf044700bc0987bdf69ed8b4a10e",
+        "window_id": "window-1",
+        "arm": "RANDOM",
+        "native_candidate_ids": [],
+        "mapped_score": 0.0
+      },
+      {
+        "record_id": "mapping-window-1-V0_3",
+        "record_hash": "4a7e332ddb314acf90aaf139ca7672f284821b3e68f895a2a2941c20eb7b0d11",
+        "window_id": "window-1",
+        "arm": "V0_3",
+        "native_candidate_ids": [],
+        "mapped_score": 0.0
+      },
+      {
+        "record_id": "mapping-window-1-PED",
+        "record_hash": "956142149f374948b0e469c442b05ec29e7f5ac218edd5b101e87c6cb05e9ea8",
+        "window_id": "window-1",
+        "arm": "PED",
+        "native_candidate_ids": [
+          "native-1"
+        ],
+        "mapped_score": 1.0
+      }
+    ],
+    "assignments": [
+      {
+        "record_id": "assignment-1",
+        "record_hash": "0f3364a663871870aa76f7227542eb2cfdd31b209a7b1a9891fd86d9f05b7b4c",
+        "window_id": "window-0",
+        "arm": "RANDOM",
+        "frame_window_ids": [
+          "window-1",
+          "window-0"
+        ],
+        "frame_hash": "828bb7c560d9c29c4654bdf13f7b7e38d4e601fc53cdf0aa8fb268ee89170116",
+        "arm_probability": 0.3333333333333333,
+        "conditional_window_probability": 0.5,
+        "step_inclusion_probability": 0.5,
+        "collection_day": "2026-10-30",
+        "collection_timezone": "UTC",
+        "slot_ordinal": 1,
+        "decision_at": "2026-10-30T12:00:00.000Z",
+        "available_arms": [
+          "RANDOM",
+          "V0_3",
+          "PED"
+        ],
+        "seed": "contract-seed-1",
+        "prior_assignment_ids": [],
+        "cumulative_inclusion_probability": null,
+        "probability_basis": "CONDITIONAL_ON_FROZEN_SLOT_FRAME_AND_RECORDED_PRIOR_ASSIGNMENTS"
+      }
+    ],
+    "prompt_packets": [
+      {
+        "record_id": "prompt-1",
+        "record_hash": "04c51bcf966894f6201a7775869f880147aa6f3aad48c9f818d4d333015e4fbd",
+        "assignment_id": "assignment-1",
+        "episode_id": "episode-0",
+        "rendered_neutral_questions": [
+          {
+            "question_id": "episode.recognition",
+            "version": "1.0.0",
+            "text": "Do you remember this particular listening period?",
+            "required": true,
+            "response_schema": {
+              "enum": [
+                "CLEAR",
+                "VAGUE",
+                "NOT_RECALLED",
+                "UNSURE",
+                "NOT_APPLICABLE",
+                "DECLINED"
+              ]
+            },
+            "presentation": {
+              "kind": "CHOICE",
+              "options": [
+                {
+                  "value": "CLEAR",
+                  "label": "Clearly"
+                },
+                {
+                  "value": "VAGUE",
+                  "label": "Vaguely"
+                },
+                {
+                  "value": "NOT_RECALLED",
+                  "label": "I do not recall"
+                },
+                {
+                  "value": "UNSURE",
+                  "label": "I am unsure"
+                },
+                {
+                  "value": "NOT_APPLICABLE",
+                  "label": "Not applicable"
+                },
+                {
+                  "value": "DECLINED",
+                  "label": "I prefer not to answer"
+                }
+              ],
+              "lower_anchor": null,
+              "upper_anchor": null
+            }
+          },
+          {
+            "question_id": "episode.meaningfulness",
+            "version": "1.0.0",
+            "text": "How personally meaningful was this particular listening experience to you?",
+            "required": true,
+            "response_schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "enum": [
+                    "KNOWN",
+                    "NOT_RECALLED",
+                    "UNSURE",
+                    "NOT_APPLICABLE",
+                    "DECLINED"
+                  ]
+                },
+                "value": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 7
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "status",
+                "value"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "const": "KNOWN"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "value": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 7
+                      }
+                    }
+                  },
+                  "else": {
+                    "properties": {
+                      "value": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "presentation": {
+              "kind": "ORDINAL_OR_UNKNOWN",
+              "options": [
+                {
+                  "value": {
+                    "status": "NOT_RECALLED",
+                    "value": null
+                  },
+                  "label": "I do not recall"
+                },
+                {
+                  "value": {
+                    "status": "UNSURE",
+                    "value": null
+                  },
+                  "label": "I am unsure"
+                },
+                {
+                  "value": {
+                    "status": "NOT_APPLICABLE",
+                    "value": null
+                  },
+                  "label": "Not applicable"
+                },
+                {
+                  "value": {
+                    "status": "DECLINED",
+                    "value": null
+                  },
+                  "label": "I prefer not to answer"
+                }
+              ],
+              "lower_anchor": "1 \u2014 Not at all personally meaningful",
+              "upper_anchor": "7 \u2014 Extremely personally meaningful"
+            }
+          }
+        ],
+        "allowed_followup_question_ids": [],
+        "display_context": {
+          "tracks": [
+            {
+              "title": "Synthetic listening fixture",
+              "artist": "Contract fixture artist"
+            }
+          ],
+          "historical_start_at": "2026-03-01T10:00:00.000Z",
+          "historical_end_at": "2026-03-01T10:06:00.000Z",
+          "time_quality": "ESTIMATED"
+        },
+        "created_at": "2026-10-30T12:00:00.000Z",
+        "available_at": "2026-10-30T12:00:00.000Z"
+      }
+    ],
+    "submissions": [
+      {
+        "record_id": "neutral-1",
+        "record_hash": "5e6eb1bf1f5f6924924aec7e06b20e248c4d60c25257d9e73b88da65a6e0a72a",
+        "prompt_packet_id": "prompt-1",
+        "stage": "NEUTRAL",
+        "submitted_at": "2026-10-30T12:02:00.000Z",
+        "locked_at": "2026-10-30T12:02:00.000Z",
+        "sequence": 3,
+        "answers": [
+          {
+            "question_id": "episode.recognition",
+            "question_version": "1.0.0",
+            "value": "CLEAR"
+          },
+          {
+            "question_id": "episode.meaningfulness",
+            "question_version": "1.0.0",
+            "value": {
+              "status": "KNOWN",
+              "value": 6
+            }
+          }
+        ]
+      }
+    ],
+    "locks": [
+      {
+        "record_id": "lock-1",
+        "record_hash": "86d8a3dbe223479c1dee3983ca71b43ca4674492bbdfafb63daa2bcc094e2b3b",
+        "neutral_submission_id": "neutral-1",
+        "prompt_packet_id": "prompt-1",
+        "locked_at": "2026-10-30T12:02:00.000Z",
+        "sequence": 3,
+        "answer_set_hash": "ac016944d99e4d106ae15773075fc53692556076984e63e1271b8407c2cbdd21",
+        "policy_version": "durable-neutral-lock-1.0.0"
+      }
+    ],
+    "prompt_events": [
+      {
+        "record_id": "audit-0",
+        "record_hash": "570a5d5d4f52fbcb15afd230a9f7cdb226933a6d51e16383c57e2c1a1717f1b6",
+        "prompt_packet_id": "prompt-1",
+        "event_type": "CREATED",
+        "occurred_at": "2026-10-30T12:00:00.000Z",
+        "sequence": 1,
+        "question_id": null,
+        "rendered_question": null,
+        "lock_id": null
+      },
+      {
+        "record_id": "audit-1",
+        "record_hash": "7e6fef433716e5591fb70670b3d90c26dd8a613714e4fbc30cf0d22d85dadba7",
+        "prompt_packet_id": "prompt-1",
+        "event_type": "OPENED",
+        "occurred_at": "2026-10-30T12:01:00.000Z",
+        "sequence": 2,
+        "question_id": null,
+        "rendered_question": null,
+        "lock_id": null
+      },
+      {
+        "record_id": "audit-2",
+        "record_hash": "cfa8a3ea1e313fe254a9eca1c152bb9eef9f34b5b2813310885778aecd570a76",
+        "prompt_packet_id": "prompt-1",
+        "event_type": "NEUTRAL_LOCKED",
+        "occurred_at": "2026-10-30T12:02:00.000Z",
+        "sequence": 3,
+        "question_id": null,
+        "rendered_question": null,
+        "lock_id": "lock-1"
+      },
+      {
+        "record_id": "audit-completed",
+        "record_hash": "ded703eb36ac7bf79bf4510ba0c6d0297058184164ef65d76fe1027d925fadff",
+        "prompt_packet_id": "prompt-1",
+        "event_type": "COMPLETED",
+        "occurred_at": "2026-10-30T12:05:00.000Z",
+        "sequence": 20,
+        "question_id": null,
+        "rendered_question": null,
+        "lock_id": "lock-1"
+      }
+    ],
+    "export_preview": {
+      "sections": [
+        {
+          "name": "consent",
+          "count": 1,
+          "records_hash": "3a266677cdb801f1270c69aefb6dec4b1a55d1b0a3bbd5741a5dec1b8b3743b2"
+        },
+        {
+          "name": "history_imports",
+          "count": 1,
+          "records_hash": "ee6a59d6266fbd8ca9fb5a8cc07071ba2dbf6617ed80e1e57350c0120a0591e3"
+        },
+        {
+          "name": "tracks",
+          "count": 1,
+          "records_hash": "d34b57d26807706ab2e76822ccc9ab29447b683fe2bf90b605e33355c88eb4d9"
+        },
+        {
+          "name": "events",
+          "count": 8,
+          "records_hash": "1b373c83aae6b1885370d08c3debcb1501c1fc021fb666d7727d96de52b87d96"
+        },
+        {
+          "name": "episode_snapshots",
+          "count": 2,
+          "records_hash": "db1889eabb8a8eb62e3634a608a70e52461444e80aedee55515aa5829d282057"
+        },
+        {
+          "name": "eligible_windows",
+          "count": 2,
+          "records_hash": "9256d9c82dbcc1e0e9788b3641de4858e1c272de56230908f9f08145f04554d2"
+        },
+        {
+          "name": "native_candidates",
+          "count": 2,
+          "records_hash": "604247ca78f0436b47f9c86b0fd00efb04c43c2e826cd0d0e93e6383841df988"
+        },
+        {
+          "name": "mappings",
+          "count": 6,
+          "records_hash": "d3a9653252c66d7553439a12ecb1cf2ec371474b2f51f571168337ce4b0bf500"
+        },
+        {
+          "name": "assignments",
+          "count": 1,
+          "records_hash": "34ed93f57a1e7bcaeee82f0e29b0e43dc7f481d86e9b1707de9e653a00da0622"
+        },
+        {
+          "name": "prompt_packets",
+          "count": 1,
+          "records_hash": "0297ccb4e5dcb2904fef4582f3293fcf8089186ffd5a2f6e6da21adad09a5e89"
+        },
+        {
+          "name": "submissions",
+          "count": 1,
+          "records_hash": "b2723e404154b3d95c8825e885efb7870a160f717287e9972e135530ef0a9c2e"
+        },
+        {
+          "name": "locks",
+          "count": 1,
+          "records_hash": "1738b77aacac5630a932c43e596feeec924da3b803f61bfce25ae876d23b29b2"
+        },
+        {
+          "name": "prompt_events",
+          "count": 4,
+          "records_hash": "2b569636408302daf3438b58cf6f209c3b3a147fbdba729517f6d47b4f0dd02b"
+        },
+        {
+          "name": "provenance",
+          "count": 1,
+          "records_hash": "cfdde7ec2d224c6ec7b76aa2371302d124201a1061f486c06be610b82c235c24"
+        }
+      ],
+      "presented_at": "2026-10-30T12:09:00.000Z",
+      "notice_version": "offline-withdrawal-1.0.0",
+      "notice": "After transfer, deleting data on this device does not delete researcher-held bundles, exports or backups. Contact the study researcher to request withdrawal. Backup retention and already disseminated anonymous results may limit deletion."
+    },
+    "export_authorization": {
+      "consent_record_id": "consent-1",
+      "preview_hash": "a38612b8dd2c35bc5aad7545ff0f3b3c123824c5ad534972c4344795607e46ff",
+      "explicitly_confirmed": true,
+      "confirmed_at": "2026-10-30T12:09:30.000Z",
+      "encryption": "age-v1",
+      "recipient_fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  },
+  "extension": {
+    "version": "h6-evidence-1.0.0",
+    "consent": {
+      "record_id": "h6-consent-fixture",
+      "version": "h6-consent-1.0.0",
+      "form_hash": "8bfac65ba7cb80b79b5818ebfc3ed8112af025d51c653aa09e2d174a15235b23",
+      "accepted_at": "2026-10-30T10:00:00.000Z",
+      "collect_h6": true,
+      "grants": {
+        "share_event_evidence": true,
+        "share_playlist_context": false,
+        "share_followup_evidence": false
+      },
+      "record_hash": "a1ad0915d747c393c155b0779f86f859adb4a9cf981454f0d0053a58e69c2992"
+    },
+    "availability": {
+      "event_evidence": "INCLUDED",
+      "playlist_context": "WITHHELD",
+      "followup_evidence": "WITHHELD",
+      "unavailable_analyses": [
+        "PLAYLIST_CONTEXT_COMPARISONS",
+        "PARTICIPANT_CONTEXT_AND_MOMENT_REPORTS",
+        "PRECISE_LYRIC_EXPOSURE"
+      ]
+    },
+    "event_evidence": [
+      {
+        "record_id": "h6event-23a6abed8d3abac990a24073c82ea23e56e3bd0b89c3c5cc6faa3ae6b3d19379",
+        "event_id": "event-0",
+        "event_key": "23a6abed8d3abac990a24073c82ea23e56e3bd0b89c3c5cc6faa3ae6b3d19379",
+        "source_file_sha256": "a524de388c49af09adedea69d51d4585fdb48d6b9fea728802ada1f20ad5fbef",
+        "source_ordinal": 0,
+        "parser_version": "spotify-h6-1.0.0",
+        "native": {
+          "ts": "2026-03-01T10:00:00.000Z",
+          "ms_played": 60000,
+          "skipped": null,
+          "reason_start": null,
+          "reason_end": null,
+          "shuffle": null,
+          "duration_ms": 180000,
+          "track_duration_ms": 180000,
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "isrc": "USAAA2600001"
+        },
+        "normalized": {
+          "recording_duration_ms": 180000,
+          "duration_quality": "PROVIDER_SUPPLIED",
+          "skip_outcome": "UNKNOWN",
+          "termination_kind": "UNKNOWN",
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "position_evidence": "NOT_ESTABLISHED"
+        },
+        "withheld_native_fields": [],
+        "record_hash": "1bcee5decb3e0d89440fd2bd68ea568b3c3100384e3245659c94296e01bc7521"
+      },
+      {
+        "record_id": "h6event-0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+        "event_id": "event-1",
+        "event_key": "0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+        "source_file_sha256": "a524de388c49af09adedea69d51d4585fdb48d6b9fea728802ada1f20ad5fbef",
+        "source_ordinal": 1,
+        "parser_version": "spotify-h6-1.0.0",
+        "native": {
+          "ts": "2026-03-01T10:02:00.000Z",
+          "ms_played": 60000,
+          "skipped": false,
+          "reason_start": null,
+          "reason_end": null,
+          "shuffle": null,
+          "duration_ms": 180000,
+          "track_duration_ms": 180000,
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "isrc": "USAAA2600001"
+        },
+        "normalized": {
+          "recording_duration_ms": 180000,
+          "duration_quality": "PROVIDER_SUPPLIED",
+          "skip_outcome": "RETAINED",
+          "termination_kind": "UNKNOWN",
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "position_evidence": "NOT_ESTABLISHED"
+        },
+        "withheld_native_fields": [],
+        "record_hash": "3588b850c1b319ec5bcae9cff13f9fe21fa810a62a2e090b89f0f19c444856b2"
+      },
+      {
+        "record_id": "h6event-0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+        "event_id": "event-2",
+        "event_key": "0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+        "source_file_sha256": "a524de388c49af09adedea69d51d4585fdb48d6b9fea728802ada1f20ad5fbef",
+        "source_ordinal": 2,
+        "parser_version": "spotify-h6-1.0.0",
+        "native": {
+          "ts": "2026-03-01T10:04:00.000Z",
+          "ms_played": 60000,
+          "skipped": false,
+          "reason_start": null,
+          "reason_end": null,
+          "shuffle": null,
+          "duration_ms": 180000,
+          "track_duration_ms": 180000,
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "isrc": "USAAA2600001"
+        },
+        "normalized": {
+          "recording_duration_ms": 180000,
+          "duration_quality": "PROVIDER_SUPPLIED",
+          "skip_outcome": "RETAINED",
+          "termination_kind": "UNKNOWN",
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "position_evidence": "NOT_ESTABLISHED"
+        },
+        "withheld_native_fields": [],
+        "record_hash": "a423e31b06653f3f378d4ff958ed11e1a2ec883d8be7ba3d64f7e40c4321e92e"
+      },
+      {
+        "record_id": "h6event-897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36",
+        "event_id": "event-3",
+        "event_key": "897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36",
+        "source_file_sha256": "a524de388c49af09adedea69d51d4585fdb48d6b9fea728802ada1f20ad5fbef",
+        "source_ordinal": 3,
+        "parser_version": "spotify-h6-1.0.0",
+        "native": {
+          "ts": "2026-03-01T10:06:00.000Z",
+          "ms_played": 60000,
+          "skipped": true,
+          "reason_start": null,
+          "reason_end": null,
+          "shuffle": null,
+          "duration_ms": 180000,
+          "track_duration_ms": 180000,
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "isrc": "USAAA2600001"
+        },
+        "normalized": {
+          "recording_duration_ms": 180000,
+          "duration_quality": "PROVIDER_SUPPLIED",
+          "skip_outcome": "SKIPPED",
+          "termination_kind": "UNKNOWN",
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "position_evidence": "NOT_ESTABLISHED"
+        },
+        "withheld_native_fields": [],
+        "record_hash": "c664d43fb28a5d1320a819b6bf8dd72674acf4a49b97a14d7d32ac0932e970dd"
+      },
+      {
+        "record_id": "h6event-b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+        "event_id": "event-4",
+        "event_key": "b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+        "source_file_sha256": "a524de388c49af09adedea69d51d4585fdb48d6b9fea728802ada1f20ad5fbef",
+        "source_ordinal": 4,
+        "parser_version": "spotify-h6-1.0.0",
+        "native": {
+          "ts": "2026-03-01T10:08:00.000Z",
+          "ms_played": 60000,
+          "skipped": false,
+          "reason_start": null,
+          "reason_end": null,
+          "shuffle": null,
+          "duration_ms": 180000,
+          "track_duration_ms": 180000,
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "isrc": "USAAA2600001"
+        },
+        "normalized": {
+          "recording_duration_ms": 180000,
+          "duration_quality": "PROVIDER_SUPPLIED",
+          "skip_outcome": "RETAINED",
+          "termination_kind": "UNKNOWN",
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "position_evidence": "NOT_ESTABLISHED"
+        },
+        "withheld_native_fields": [],
+        "record_hash": "0026d4c35693e4b122961d03ae9619a53673d22694c633a8e3f5572ee3ed1ae3"
+      },
+      {
+        "record_id": "h6event-80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+        "event_id": "event-5",
+        "event_key": "80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+        "source_file_sha256": "a524de388c49af09adedea69d51d4585fdb48d6b9fea728802ada1f20ad5fbef",
+        "source_ordinal": 5,
+        "parser_version": "spotify-h6-1.0.0",
+        "native": {
+          "ts": "2026-03-01T10:10:00.000Z",
+          "ms_played": 60000,
+          "skipped": false,
+          "reason_start": null,
+          "reason_end": null,
+          "shuffle": null,
+          "duration_ms": 180000,
+          "track_duration_ms": 180000,
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "isrc": "USAAA2600001"
+        },
+        "normalized": {
+          "recording_duration_ms": 180000,
+          "duration_quality": "PROVIDER_SUPPLIED",
+          "skip_outcome": "RETAINED",
+          "termination_kind": "UNKNOWN",
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "position_evidence": "NOT_ESTABLISHED"
+        },
+        "withheld_native_fields": [],
+        "record_hash": "abb277aa63c88718de4795b8f7bf03008e5c2c11af06fb18ae2e5aa7d6d15170"
+      },
+      {
+        "record_id": "h6event-41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+        "event_id": "event-6",
+        "event_key": "41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+        "source_file_sha256": "a524de388c49af09adedea69d51d4585fdb48d6b9fea728802ada1f20ad5fbef",
+        "source_ordinal": 6,
+        "parser_version": "spotify-h6-1.0.0",
+        "native": {
+          "ts": "2026-03-01T10:12:00.000Z",
+          "ms_played": 60000,
+          "skipped": true,
+          "reason_start": null,
+          "reason_end": null,
+          "shuffle": null,
+          "duration_ms": 180000,
+          "track_duration_ms": 180000,
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "isrc": "USAAA2600001"
+        },
+        "normalized": {
+          "recording_duration_ms": 180000,
+          "duration_quality": "PROVIDER_SUPPLIED",
+          "skip_outcome": "SKIPPED",
+          "termination_kind": "UNKNOWN",
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "position_evidence": "NOT_ESTABLISHED"
+        },
+        "withheld_native_fields": [],
+        "record_hash": "ea957aa0f5f666fbabc8e77c925446d5e2ec30df39553332be8c662f0441f7c9"
+      },
+      {
+        "record_id": "h6event-bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9",
+        "event_id": "event-7",
+        "event_key": "bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9",
+        "source_file_sha256": "a524de388c49af09adedea69d51d4585fdb48d6b9fea728802ada1f20ad5fbef",
+        "source_ordinal": 7,
+        "parser_version": "spotify-h6-1.0.0",
+        "native": {
+          "ts": "2026-03-01T10:14:00.000Z",
+          "ms_played": 60000,
+          "skipped": false,
+          "reason_start": null,
+          "reason_end": null,
+          "shuffle": null,
+          "duration_ms": 180000,
+          "track_duration_ms": 180000,
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "isrc": "USAAA2600001"
+        },
+        "normalized": {
+          "recording_duration_ms": 180000,
+          "duration_quality": "PROVIDER_SUPPLIED",
+          "skip_outcome": "RETAINED",
+          "termination_kind": "UNKNOWN",
+          "playback_source": "PLAYLIST",
+          "manual_selection": false,
+          "position_evidence": "NOT_ESTABLISHED"
+        },
+        "withheld_native_fields": [],
+        "record_hash": "d24a776a6dcb3148a99e3333917c60bd161fa027188c5257c408bb9a25a3d8f5"
+      }
+    ],
+    "sessionization_runs": [
+      {
+        "record_id": "h6run-8bf5cca519bc97713d9a33b104b654c94e19fb830450945150d87c92834dcab9",
+        "version": "participant-sessionizer-1.0.0",
+        "input_event_refs": [
+          "23a6abed8d3abac990a24073c82ea23e56e3bd0b89c3c5cc6faa3ae6b3d19379",
+          "0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+          "0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+          "897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36",
+          "b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+          "80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+          "41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+          "bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9"
+        ],
+        "input_hash": "1b373c83aae6b1885370d08c3debcb1501c1fc021fb666d7727d96de52b87d96",
+        "parameters": {
+          "gap_seconds": 1800,
+          "clock_basis": "PROVIDER_OUTCOME_TIME",
+          "order": [
+            "occurred_at",
+            "source_ordinal",
+            "event_key"
+          ]
+        },
+        "record_hash": "da6f91686ef02812de829d94fb209ae516d6c3242a74b7ab3ad269a45722ca81"
+      }
+    ],
+    "sessions": [
+      {
+        "record_id": "h6session-b54a5f15dbfcb2176bb28c10e396345cca891c65b7094240af8c77ace627cff6",
+        "run_id": "h6run-8bf5cca519bc97713d9a33b104b654c94e19fb830450945150d87c92834dcab9",
+        "session_key": "b54a5f15dbfcb2176bb28c10e396345cca891c65b7094240af8c77ace627cff6",
+        "event_refs": [
+          "23a6abed8d3abac990a24073c82ea23e56e3bd0b89c3c5cc6faa3ae6b3d19379",
+          "0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+          "0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+          "897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36",
+          "b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+          "80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+          "41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+          "bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9"
+        ],
+        "transitions": [
+          {
+            "from_event_ref": "23a6abed8d3abac990a24073c82ea23e56e3bd0b89c3c5cc6faa3ae6b3d19379",
+            "to_event_ref": "0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+            "gap_ms": 120000,
+            "order_quality": "PROVIDER_TIME_ORDER"
+          },
+          {
+            "from_event_ref": "0fe6bde7c305b27e3b614195061cd89fcd0d11b94b6d934f39e9778a0be1aa81",
+            "to_event_ref": "0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+            "gap_ms": 120000,
+            "order_quality": "PROVIDER_TIME_ORDER"
+          },
+          {
+            "from_event_ref": "0ee8221bec7c86d6d42af44979a760daba905fe4a2fcc090cdde7127a1aaf4b7",
+            "to_event_ref": "897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36",
+            "gap_ms": 120000,
+            "order_quality": "PROVIDER_TIME_ORDER"
+          },
+          {
+            "from_event_ref": "897cb0bad2eee4e4ebcdc28d816df753f85c324c4401863846fd72e1ce5dff36",
+            "to_event_ref": "b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+            "gap_ms": 120000,
+            "order_quality": "PROVIDER_TIME_ORDER"
+          },
+          {
+            "from_event_ref": "b3c73e336131da7a3bd93c6d8ab81f64103b9d693714bc577301278d754fd8a1",
+            "to_event_ref": "80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+            "gap_ms": 120000,
+            "order_quality": "PROVIDER_TIME_ORDER"
+          },
+          {
+            "from_event_ref": "80cd7847385a83219ba466afead60ce3c283aaf2dae63033a609f5b48b82fe7e",
+            "to_event_ref": "41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+            "gap_ms": 120000,
+            "order_quality": "PROVIDER_TIME_ORDER"
+          },
+          {
+            "from_event_ref": "41b8ebc4c2a57d55c97ad30910247b35c720402dcbda76e9e90100ab82d3eea2",
+            "to_event_ref": "bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9",
+            "gap_ms": 120000,
+            "order_quality": "PROVIDER_TIME_ORDER"
+          }
+        ],
+        "time_quality": "PROVIDER_TIMES_WITH_UNCERTAIN_STARTS",
+        "record_hash": "46e093e7263a64b56f95a1b5b9161d24472c530afcc66cb4bce50cb2575792c8"
+      }
+    ],
+    "followup_selections": [],
+    "followup_exposures": [],
+    "followup_submissions": [],
+    "followup_completions": []
+  },
+  "export_preview": {
+    "presented_at": "2026-10-30T12:10:00.000Z",
+    "notice": "H6 is an observational retrospective pilot, not preregistered. Only authorized sections are included. After transfer, local deletion cannot remove researcher-held copies or backups; contact the researcher for withdrawal.",
+    "core_integrity_hash": "80859672a7ab37b5d828885c8697e332cb963e41c03cf957cb4feafea55b8fd6",
+    "extension_hash": "e4e5912218c538d790af0164961a5ad3f1e8b7a6541db13f7f23a452e8bd1f1d",
+    "sections": [
+      {
+        "name": "consent",
+        "count": 1,
+        "records_hash": "92095d7554a1b8b1da7e3e2f9d0730dad36b9fc82325894d7b4d0b3848f97cbe"
+      },
+      {
+        "name": "event_evidence",
+        "count": 8,
+        "records_hash": "d769e07e7c890e9e0d819b9486c3bbdd99b5d729eb09c47f8ee2c3f267c6a1d3"
+      },
+      {
+        "name": "sessionization_runs",
+        "count": 1,
+        "records_hash": "5eacb923216a7a822c21f84671c586f9ebe546b8b4bfe0525c5b4f216028356c"
+      },
+      {
+        "name": "sessions",
+        "count": 1,
+        "records_hash": "d4eea9942a5f635d26fc003ad39bb9f1a5f90ac5daab5ebd00972c0103dd63e1"
+      },
+      {
+        "name": "followup_selections",
+        "count": 0,
+        "records_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "name": "followup_exposures",
+        "count": 0,
+        "records_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "name": "followup_submissions",
+        "count": 0,
+        "records_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "name": "followup_completions",
+        "count": 0,
+        "records_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    ]
+  },
+  "export_authorization": {
+    "explicitly_confirmed": true,
+    "confirmed_at": "2026-10-30T12:10:00.000Z",
+    "preview_hash": "f3133b4cbb33c94695ff4222479eca72628e8015ca9308f211ce049b0204bcf7",
+    "recipient_fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "format": "resonance-h6-contract-release",
+  "version": "1.0.0",
+  "files": {
+    "PROTOCOL.md": "11efb3d254d53d79de5a4f75fab6d8a265bbf6930f431324d08f34a802a267df",
+    "README.md": "fd560157cee135fc06f926982238bec39a222862c3582f2a11b247c2a3d8702a",
+    "__init__.py": "60114e6c1264776a38946f773242c444ac4e01227efa4f42599801d2c57ab141",
+    "activation.json": "bacb1cbe5d8e201b9287a906ae3889076a317722f97785006cb244080810c6c0",
+    "canonical.mjs": "aed0cee6b56c72be03cc3fc90cbc9ea4b08c0ff6c14cca61c37ea38a66f02b31",
+    "capture.py": "28eac03fd15ba9a2ccc7ef56254de567abe0e3dd3fb82215a2ff67a4a54de271",
+    "consent.json": "19c226d3cd6f3d5bd311444f1db73111f8df578c2c0f6e14fc172779ffe602ab",
+    "contract.py": "cf0aba8c4f4e9aa7b6917dc7cd96cde93b1a30cf185bc88ce8b0d2c25ba50154",
+    "instrument.py": "fcf6e801ead5ffa878377b13ae78d565ee0a5e06ba59abe983ecaadbd411daff",
+    "questions.json": "ab09cbfc96583a4c741a4af80c1bb683404dbb529027a5cd7fe880b6167cc163",
+    "release.py": "6e62a97bee1e555b8eb94bf772737aac76521fe2bd2a0a9698b7d39b68450a20",
+    "schema.json": "3978ec6906d75fba6a081f7fab0f80587396cbd86d9d1c77bcbddb55514ac854",
+    "selftest.mjs": "e80d9f48485726fd099fe68395f53fccc8152c16ee42b66a2dbf0df240f02f0a",
+    "selftest.py": "6df551832fdf076e1e1a6698d97724e62c3d2ffbef615b35cb8b168a7fb5af30",
+    "transport.py": "efe469c180730b28d5a3a5cb19fdf029b2520296dddb8010e1933a1e549e55a4"
+  },
+  "content_hash": "6cdefd78e3c5b08475254a99a008d293ec2c61ec331dabeaaf51967329aeb986"
+}
