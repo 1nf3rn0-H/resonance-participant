@@ -63,6 +63,7 @@ class ParticipantApp(H6Mixin):
             self.store.set(c,'config',config);self.store.set(c,'config_hash',expected_hash);self.store.set(c,'share_history',share_history)
             if h6_config:
                 from contracts.h6_bundle.v1.contract import CONSENT as H6_CONSENT
+                c.execute('PRAGMA user_version=2')  # Old participant releases must reject H6 stores.
                 self.store.set(c,'h6_options',h6_options)
                 self.store.add(c,'h6_consent',{'record_id':identifier('h6consent'),'version':'h6-consent-1.0.0','form_hash':sha256(H6_CONSENT),'accepted_at':self.clock(),'collect_h6':True,'grants':{k:v for k,v in h6_options.items() if k!='collect_h6'}})
             self.store.set(c,'processing_consented_at',self.clock());self.store.set(c,'seed',secrets.token_hex(32));self.store.set(c,'sequence',0);self.store.changed(c)
@@ -93,8 +94,10 @@ class ParticipantApp(H6Mixin):
             if h6:
                 from contracts.h6_bundle.v1.capture import sessions as h6_sessions
                 for r in parsed['h6_event_evidence']:self.store.add(c,'h6_event_evidence',r)
-                run,session_records=h6_sessions(events);self.store.add(c,'h6_sessionization_runs',run)
+                run,session_records=h6_sessions(events,self.clock());self.store.add(c,'h6_sessionization_runs',run)
                 for r in session_records:self.store.add(c,'h6_sessions',r)
+                from contracts.h6_bundle.v1.transport import MAX_COMPONENT
+                required(len(dumps(self.h6_extension(c)))<MAX_COMPONENT-2*1024*1024,'This historical range exceeds the H6 evidence budget. Choose a smaller date range before interviewing.')
             seed=self.store.get(c,'seed');natives,audit=native_results(events,tracks,seed,stamp,self.store.get(c,'share_history'))
             for native in natives:self.store.add(c,'native_candidates',native)
             completed_at=self.clock()

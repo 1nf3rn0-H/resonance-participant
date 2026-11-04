@@ -28,10 +28,10 @@ def event_evidence(row,event,file_hash):
 
 def dt(value):return datetime.fromisoformat(value.replace('Z','+00:00'))
 
-def sessions(events):
+def sessions(events,generated_at):
     ordered=sorted(events,key=lambda e:(e['occurred_at'],e['source_ordinal'],e['event_key']))
     refs=[e['event_key'] for e in ordered];run_id='h6run-'+sha256({'refs':refs,'parameters':PARAMETERS})
-    run={'record_id':run_id,'version':'participant-sessionizer-1.0.0','input_event_refs':refs,'input_hash':sha256(events),'parameters':PARAMETERS}
+    run={'record_id':run_id,'version':'participant-sessionizer-1.0.0','input_event_refs':refs,'input_hash':sha256(events),'artifact_generated_at':generated_at,'parameters':PARAMETERS}
     groups=[]
     for event in ordered:
         if not groups or (dt(event['occurred_at'])-dt(groups[-1][-1]['occurred_at'])).total_seconds()>1800:groups.append([])

@@ -46,7 +46,9 @@ def export(app,identity,fp):
 class H6Extension(unittest.TestCase):
     def test_full_capture_preserves_authorized_fields_and_sessions_after_restart(self):
         with tempfile.TemporaryDirectory() as directory:
-            app,identity,fp,_,_=setup(directory);app.ingest(history());pid,answers=interview(app)
+            app,identity,fp,_,_=setup(directory)
+            with app.store.connect() as c:self.assertEqual(c.execute('PRAGMA user_version').fetchone()[0],2)
+            app.ingest(history());pid,answers=interview(app)
             reopened=ParticipantApp(Path(directory)/'data',lambda:STAMP);bundle=export(reopened,identity,fp)
             validate(bundle);validate_core(bundle['core']);ext=bundle['extension']
             self.assertEqual(bundle['manifest']['protocol_version'],PROTOCOL)

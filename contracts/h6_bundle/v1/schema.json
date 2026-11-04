@@ -576,6 +576,11 @@
                   "order"
                 ],
                 "additionalProperties": false
+              },
+              "artifact_generated_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$"
               }
             },
             "required": [
@@ -584,7 +589,8 @@
               "version",
               "input_event_refs",
               "input_hash",
-              "parameters"
+              "parameters",
+              "artifact_generated_at"
             ],
             "additionalProperties": false
           },

@@ -34,3 +34,8 @@ M0 and both native sampler sources remain byte-identical. New imports retain pro
 The strict M0 format has no duration/playlist/playback-source slots or H6 follow-up definitions. Recognized enriched-history fields are therefore rejected atomically, with a message to keep the original file and obtain a compatible study release. They are not silently discarded. This is a fail-closed limitation, not implementation of enriched H6 exports. Standard Spotify extended and legacy history remains supported. No new H6 questions are activated in this patch.
 
 The synthetic H6 fixture has one recording in two shuffled sessions, skipped in one and retained in the other, explicit unknowns, native button/trackdone reasons and a two-second play with uncertain start. Regression tests verify deterministic order and identical frozen sampler inputs after capture-only opportunity normalization.
+
+
+## H6 capture 1.0.0 / participant app 1.1.0
+
+The shared H6 release lives beside the unchanged M0 package. New studies explicitly select the H6 protocol and consent; legacy studies are never silently upgraded. Both M0 and H6 browser workflows run under the CI loopback-only network namespace, including restart recovery, neutral locking, optional questions and encrypted validation. The H6 test verifies 64 authorized extended events and four complete sessions. Source redaction, unknown outcomes, source/session integrity, optional answer versions and scope combinations have focused regressions, including an advancing-clock export-preview test. SQLite marker 2 protects new H6 stores from an old app opening them.

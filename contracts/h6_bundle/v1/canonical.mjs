@@ -8,7 +8,7 @@ export function contentHash(bundle){
  for(const lock of core.locks)ids.set(lock.record_id,sha256([ids.get(lock.prompt_packet_id),lock.answer_set_hash]))
  for(const run of ext.sessionization_runs)ids.set(run.record_id,sha256([run.input_event_refs,run.parameters]))
  for(const selected of ext.followup_selections)ids.set(selected.record_id,sha256([ids.get(selected.prompt_packet_id),selected.policy_version]))
- const refs=new Set(['event_id','prompt_packet_id','neutral_lock_id','run_id','selection_id']),volatile=new Set(['record_id','record_hash','created_at','generated_at','input_hash'])
+ const refs=new Set(['event_id','prompt_packet_id','neutral_lock_id','run_id','selection_id']),volatile=new Set(['record_id','record_hash','created_at','generated_at','artifact_generated_at','input_hash'])
  function project(value,key){if(Array.isArray(value))return value.map(v=>project(v,key));if(value&&typeof value==='object')return Object.fromEntries(Object.entries(value).filter(([k])=>!volatile.has(k)).map(([k,v])=>[k,project(v,k)]));return refs.has(key)&&typeof value==='string'?(ids.get(value)||value):value}
  const parts=Object.fromEntries(sections.map(name=>[name,ext[name].map(r=>project(r)).sort((a,b)=>sha256(a).localeCompare(sha256(b),'en'))]))
  return sha256({domain:'resonance-h6-scientific-1.0.0',core_content_hash:core.manifest.content_hash,consent:project(ext.consent),availability:ext.availability,sections:parts})

@@ -7,10 +7,10 @@
     "bundle_id": "h6-fixture-full",
     "generated_at": "2026-10-30T12:10:00.000Z",
     "core_integrity_hash": "80859672a7ab37b5d828885c8697e332cb963e41c03cf957cb4feafea55b8fd6",
-    "contract_release_hash": "ad5d979107328bf15d572e813e4319a2553d7771edc616cf0815960d61e49ad9",
+    "contract_release_hash": "c482bca225179044773bfca0a28d996a3f91a5493caa2043f6cba8630c4a34e1",
     "question_bank_hash": "4cda7254791b476c2d6e4cb3c7230f854fee9545604b14c9d206c29a9a81e6c9",
     "content_hash": "e5604bf2770f7383e23685d7d2d15dd609f42d6e1c6820ceaabc35aa120eb9b2",
-    "integrity_hash": "4fb8833f891f794123866233556a8186bf86126196b04702e70f429b24c3cfcf"
+    "integrity_hash": "638384dc5b78d76c53423cdcb79ce9f805b917ce1dd43c39e51d60f11f228cd5"
   },
   "core": {
     "manifest": {
@@ -1150,6 +1150,7 @@
           "bdc22b7f2adbd8a96fa641e615053dee86bd31fc0aab1e8ab22abe4a3b3818f9"
         ],
         "input_hash": "1b373c83aae6b1885370d08c3debcb1501c1fc021fb666d7727d96de52b87d96",
+        "artifact_generated_at": "2026-10-30T11:10:00.000Z",
         "parameters": {
           "gap_seconds": 1800,
           "clock_basis": "PROVIDER_OUTCOME_TIME",
@@ -1159,7 +1160,7 @@
             "event_key"
           ]
         },
-        "record_hash": "da6f91686ef02812de829d94fb209ae516d6c3242a74b7ab3ad269a45722ca81"
+        "record_hash": "89f3fe6c262476896d3a67db8d78e50e2adbafeb6864e05ec1c8efb78ce9f1c9"
       }
     ],
     "sessions": [
@@ -1707,7 +1708,7 @@
     "presented_at": "2026-10-30T12:10:00.000Z",
     "notice": "H6 is an observational retrospective pilot, not preregistered. Only authorized sections are included. After transfer, local deletion cannot remove researcher-held copies or backups; contact the researcher for withdrawal.",
     "core_integrity_hash": "80859672a7ab37b5d828885c8697e332cb963e41c03cf957cb4feafea55b8fd6",
-    "extension_hash": "91bcd55b11ea7740868c20d2c345a285cf969c427ddd2bedc46ca8c11f1e6746",
+    "extension_hash": "bac81a54e09838f0228fab6c035d5db6e46b7029b4f17f4857ce6f743604d9a4",
     "sections": [
       {
         "name": "consent",
@@ -1722,7 +1723,7 @@
       {
         "name": "sessionization_runs",
         "count": 1,
-        "records_hash": "5eacb923216a7a822c21f84671c586f9ebe546b8b4bfe0525c5b4f216028356c"
+        "records_hash": "218d7f3dda5f1a49a27c3064ba45cda874dd01fef652f46ce76d09312c57c781"
       },
       {
         "name": "sessions",
@@ -1754,7 +1755,7 @@
   "export_authorization": {
     "explicitly_confirmed": true,
     "confirmed_at": "2026-10-30T12:10:00.000Z",
-    "preview_hash": "116fdf603f1294afc0592e35c41422015cd74994a79dc078f925d28aaece9118",
+    "preview_hash": "87cfc28d8d03fd0c51142f4032adb07d5304ca3ba5f6bdae62ee542a2fc44544",
     "recipient_fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
   }
 }

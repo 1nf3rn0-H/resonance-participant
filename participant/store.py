@@ -46,8 +46,9 @@ class Store:
         self.directory.chmod(0o700);self.path=self.directory/'participant.sqlite3'
         with self.connect() as c:
             version=c.execute('PRAGMA user_version').fetchone()[0]
-            if version not in (0,1):raise ValueError('Unsupported local database version; keep your data and use a compatible release')
-            c.executescript(SCHEMA);c.execute('PRAGMA user_version=1')
+            if version not in (0,1,2):raise ValueError('Unsupported local database version; keep your data and use a compatible release')
+            c.executescript(SCHEMA)
+            if version==0:c.execute('PRAGMA user_version=1')
         self.path.chmod(0o600)
     def connect(self,erase=False):
         c=sqlite3.connect(self.path,timeout=30,isolation_level=None,factory=LocalConnection)
@@ -85,6 +86,6 @@ class Store:
         try:
             c.execute('BEGIN IMMEDIATE')
             for table in ['drafts','followup_drafts','previews','exports','locks','slots','sessions','runs','records','meta']:c.execute('DELETE FROM '+table)
-            c.commit();result=c.execute('PRAGMA wal_checkpoint(TRUNCATE)').fetchone()
+            c.execute('PRAGMA user_version=1');c.commit();result=c.execute('PRAGMA wal_checkpoint(TRUNCATE)').fetchone()
             if result[0]:raise ValueError('Close other instances and retry local erasure')
         finally:c.close()

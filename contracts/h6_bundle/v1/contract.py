@@ -30,7 +30,7 @@ def content_hash(bundle):
     for r in ext['followup_selections']:identities[r['record_id']]=sha256([identities[r['prompt_packet_id']],r['policy_version']])
     refs={'event_id','prompt_packet_id','neutral_lock_id','run_id','selection_id'}
     def project(value,key=None):
-        if isinstance(value,dict):return {k:project(v,k) for k,v in value.items() if k not in {'record_id','record_hash','created_at','generated_at','input_hash'}}
+        if isinstance(value,dict):return {k:project(v,k) for k,v in value.items() if k not in {'record_id','record_hash','created_at','generated_at','artifact_generated_at','input_hash'}}
         if isinstance(value,list):return [project(v,key) for v in value]
         return identities.get(value,value) if key in refs and isinstance(value,str) else value
     sections={name:sorted((project(r) for r in ext[name]),key=sha256) for name in SECTIONS}
@@ -86,8 +86,10 @@ def _validate(bundle):
             require(set(r['withheld_native_fields'])<=PLAYLIST_FIELDS,'REDACTION_FIELDS')
             if not grants['share_playlist_context']:require(not PLAYLIST_FIELDS&set(r['native']),'WITHHELD_PLAYLIST_PRESENT')
             else:require(not r['withheld_native_fields'],'UNDECLARED_REDACTION')
-        run,expected=sessions(core['events'])
         require(len(ext['sessionization_runs'])==1,'SESSION_RUN')
+        generated_at=ext['sessionization_runs'][0]['artifact_generated_at']
+        require(core['provenance']['sampling_cutoff_at']<=generated_at<=core['manifest']['generated_at'],'SESSION_ARTIFACT_TIME')
+        run,expected=sessions(core['events'],generated_at)
         require({k:v for k,v in ext['sessionization_runs'][0].items() if k!='record_hash'}==run,'SESSION_RUN_CONTENT')
         require([{k:v for k,v in r.items() if k!='record_hash'} for r in ext['sessions']]==expected,'SESSION_MEMBERSHIP_OR_TRANSITIONS')
     question_sections=['followup_selections','followup_exposures','followup_submissions','followup_completions']

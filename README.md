@@ -92,3 +92,16 @@ The GitHub acceptance workflow installs dependencies first, then runs unit/contr
 ## Local deletion and transferred copies
 
 The app's deletion control removes its local records, sampling runs, drafts, cached exports and SQLite contents, using SQLite secure deletion and WAL truncation. It does not delete original Spotify files, browser downloads, other backups or researcher-held copies. Contact the researcher separately for withdrawal after transfer. No universal SSD/backup erasure or deletion from already disseminated anonymous research is promised.
+
+
+## H6 retrospective pilot (app 1.1.0)
+
+New coordinator configs now default to **offline-retro-h6-1.0.0-pilot**, an observational pilot, not preregistered. The shared [H6 contract/protocol](contracts/h6_bundle/v1/README.md) wraps an independently valid, unchanged M0 core. Existing M0 configurations and locked responses retain their original behavior; the config helper supports `--legacy-m0` when needed.
+
+For a new H6 study, use a fresh dedicated data directory, open the browser setup and select the pinned public study config. Read and explicitly accept H6 local collection. Separately choose whether to share extended event/session evidence, playlist context, and H6 follow-up evidence; these choices default to off and are frozen for this local study. The full export preview still requires final explicit confirmation. H6 setup uses the browser; the `--study-config` shortcut is for M0 configurations.
+
+H6 preserves allowlisted provider duration/context values, source identity, complete ordered sessions/transitions and versioned sessionization provenance. Missing skips remain unknown. After the original two neutral answers lock, at most two optional questions cover context and a deterministically chosen skipping/moment domain. Remembered activities/attention/manual control, accidental or interrupted skipping, and optional approximate musical positions remain participant reports. No psychological classifier, media analysis, external metadata client or investigator runs here.
+
+Responses-only exports contain no H6 source-event/session data; withheld categories and unavailable analyses are declared. Playlist values and H6 interview evidence are omitted unless separately authorized. Original provider account/IP/token/device fields are excluded. New H6 stores use SQLite format marker 2 so older participant releases reject them; M0 stores stay at marker 1. Close old app versions before opening a new H6 study. Local deletion covers all H6 records and cached exports; transferred/downloaded copies need separate withdrawal/deletion.
+
+The new dual-version receiver accepts both transports. An unmodified old receiver rejects an H6 container rather than importing partial evidence. Obtain the corresponding research-engine update before transferring pilot bundles. Initial import rejects an oversized authorized evidence scope before interviewing; use the historical date controls to narrow it. Runtime remains offline after installation.

@@ -5,18 +5,18 @@
     "PROTOCOL.md": "11efb3d254d53d79de5a4f75fab6d8a265bbf6930f431324d08f34a802a267df",
     "README.md": "fd560157cee135fc06f926982238bec39a222862c3582f2a11b247c2a3d8702a",
     "__init__.py": "60114e6c1264776a38946f773242c444ac4e01227efa4f42599801d2c57ab141",
-    "activation.json": "bacb1cbe5d8e201b9287a906ae3889076a317722f97785006cb244080810c6c0",
-    "canonical.mjs": "aed0cee6b56c72be03cc3fc90cbc9ea4b08c0ff6c14cca61c37ea38a66f02b31",
-    "capture.py": "28eac03fd15ba9a2ccc7ef56254de567abe0e3dd3fb82215a2ff67a4a54de271",
+    "activation.json": "b058d4d9b23261095e3b15b97c656eae719bfa3ec57c99d9e324d1f6e8d7b99e",
+    "canonical.mjs": "79e3206ec32d17fe1ff00ee892a59fca4f2e70be333f293b4c73067bd5e966bf",
+    "capture.py": "967c137f29a4bc4378941abb7491a2141047fe334724e2cccffa94b63c3b657a",
     "consent.json": "19c226d3cd6f3d5bd311444f1db73111f8df578c2c0f6e14fc172779ffe602ab",
-    "contract.py": "a76ac69a26aa33607816c117cb7a6db1b18a45771f0c1e161e406b9277ea47df",
+    "contract.py": "404549839c08483210f4a225aa1f0a249518637287ab3bf5211005a3b03759f5",
     "instrument.py": "fcf6e801ead5ffa878377b13ae78d565ee0a5e06ba59abe983ecaadbd411daff",
     "questions.json": "ab09cbfc96583a4c741a4af80c1bb683404dbb529027a5cd7fe880b6167cc163",
     "release.py": "6e62a97bee1e555b8eb94bf772737aac76521fe2bd2a0a9698b7d39b68450a20",
-    "schema.json": "3c0baf1b6723320e65c81cfcd2fbfd78e8109eb5ca36c0a5c44fb88118b792bd",
+    "schema.json": "6e8d789856f71eb12186c9daf067fad1c998a160cae044f3482e14b74c618e05",
     "selftest.mjs": "e80d9f48485726fd099fe68395f53fccc8152c16ee42b66a2dbf0df240f02f0a",
     "selftest.py": "6df551832fdf076e1e1a6698d97724e62c3d2ffbef615b35cb8b168a7fb5af30",
     "transport.py": "efe469c180730b28d5a3a5cb19fdf029b2520296dddb8010e1933a1e549e55a4"
   },
-  "content_hash": "ad5d979107328bf15d572e813e4319a2553d7771edc616cf0815960d61e49ad9"
+  "content_hash": "c482bca225179044773bfca0a28d996a3f91a5493caa2043f6cba8630c4a34e1"
 }

@@ -1,5 +1,10 @@
 {
   "protocol_version": "offline-retro-h6-1.0.0-pilot",
-  "status": "PENDING_VALIDATION",
-  "new_studies_only": true
+  "status": "ACTIVE_RETROSPECTIVE_PILOT",
+  "new_studies_only": true,
+  "activated_on": "2026-11-04",
+  "research_status": "OBSERVATIONAL_NOT_PREREGISTERED",
+  "acceptance_run": "https://github.com/1nf3rn0-H/resonance-participant/actions/runs/41857366962",
+  "requires_explicit_h6_consent": true,
+  "m0_contract_unchanged": true
 }

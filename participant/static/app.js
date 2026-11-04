@@ -20,7 +20,7 @@ function renderPrompt(){const p=activePrompt;root.innerHTML=`<p class="eyebrow">
  const update=()=>{const r=document.querySelector('#recognition').value,m=document.querySelector('#meaning');const unknown=['NOT_RECALLED','UNSURE','NOT_APPLICABLE','DECLINED'].includes(r);m.disabled=unknown;if(unknown)m.value=r;void api('/prompts/'+p.prompt_id+'/draft',{answers:answersFromForm()}).catch(()=>{})}
  form.onchange=update;form.onsubmit=e=>{e.preventDefault();void act(async()=>{await api('/prompts/'+p.prompt_id+'/neutral',{answers:answersFromForm()});await openPrompt(p.prompt_id)})}}
  const saved=document.querySelector('#savedAnswers');if(saved)saved.textContent=JSON.stringify(p.neutral_answers,null,2)
- const followups=document.querySelector('#followups');if(followups)followups.onclick=()=>void act(async()=>{const result=await api('/prompts/'+p.prompt_id+'/followups',{});renderFollowups(result.questions,p.prompt_id)})
+ const followups=document.querySelector('#followups');if(followups)followups.onclick=()=>void act(async()=>{const result=await api('/prompts/'+p.prompt_id+'/followups',{});result.questions.length?renderFollowups(result.questions,p.prompt_id):document.querySelector('#followupArea').textContent='No optional questions are available for this response. You can finish the reflection.'})
  if(p.followups.length&&!p.completed)renderFollowups(p.followups,p.prompt_id)
  document.querySelector('#finish').onclick=()=>void act(async()=>{await api('/prompts/'+p.prompt_id+'/finish',{});await home()})
 }

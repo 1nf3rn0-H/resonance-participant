@@ -52,7 +52,7 @@ class H6Mixin:
                 'submitted_at':stamp,'locked_at':stamp,'sequence':self.sequence(c),'answers':answers})
             self.h6_complete(c,prompt,lock);self.audit(c,prompt,'COMPLETED',lock=lock['lock_id']);c.execute('DELETE FROM followup_drafts WHERE prompt_id=?',(prompt,));self.store.changed(c)
             return {'saved':True,'duplicate':False}
-    def h6_wrap(self,c,core):
+    def h6_extension(self,c):
         consent=self.store.records(c,'h6_consent')[0];grants=consent['grants']
         extension={'version':'h6-evidence-1.0.0','consent':consent,'availability':availability(grants),**{name:[] for name in SECTIONS}}
         if grants['share_event_evidence']:
@@ -63,4 +63,5 @@ class H6Mixin:
                     r['native']={k:v for k,v in r['native'].items() if k not in PLAYLIST_FIELDS};r['record_hash']=record_hash(r)
         if grants['share_followup_evidence']:
             for name in ['followup_selections','followup_exposures','followup_submissions','followup_completions']:extension[name]=self.store.records(c,'h6_'+name)
-        return wrap(core,extension,self.clock())
+        return extension
+    def h6_wrap(self,c,core):return wrap(core,self.h6_extension(c),self.clock())

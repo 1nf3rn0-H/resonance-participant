@@ -14,6 +14,8 @@ if not exist .venv\.participant-installed (
   if errorlevel 1 exit /b 1
   .venv\Scripts\python.exe -m contracts.offline_bundle.v1.selftest
   if errorlevel 1 exit /b 1
+  .venv\Scripts\python.exe -m contracts.h6_bundle.v1.selftest
+  if errorlevel 1 exit /b 1
   echo installed>.venv\.participant-installed
 )
 .venv\Scripts\python.exe -m participant.server %*

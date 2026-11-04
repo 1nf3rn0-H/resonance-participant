@@ -2,16 +2,16 @@
   {
     "fixture": "fixtures/valid-full.json",
     "content_hash": "e5604bf2770f7383e23685d7d2d15dd609f42d6e1c6820ceaabc35aa120eb9b2",
-    "integrity_hash": "4fb8833f891f794123866233556a8186bf86126196b04702e70f429b24c3cfcf"
+    "integrity_hash": "638384dc5b78d76c53423cdcb79ce9f805b917ce1dd43c39e51d60f11f228cd5"
   },
   {
     "fixture": "fixtures/valid-responses-only.json",
     "content_hash": "4b88a1979cc73d58bc010975ec348e0723b621985aa3af3e5761102cfa1b3283",
-    "integrity_hash": "812da2752f3d4e024c97ceb134f839bd08355b5f9852e32e9eed26a1b179981e"
+    "integrity_hash": "80a788cc879fcf1f4f1d9b350664c8abce8c8954028a3bafeeb134bf84787d62"
   },
   {
     "fixture": "fixtures/valid-withheld.json",
     "content_hash": "7a00537ee17e4d75b7201488eff4ff33cc82140da30c58f2fea2708fed2c0afd",
-    "integrity_hash": "004ab165dade035e9d0f62f4d68c06380a69d928fc492c92fb9e31cb1f554a8c"
+    "integrity_hash": "b671443f970fff955ef43d206d10a50f12a249f488f10f0ac60950ed5ece0a15"
   }
 ]
