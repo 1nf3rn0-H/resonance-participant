@@ -105,4 +105,14 @@ class H6Extension(unittest.TestCase):
             self.assertEqual(ext['followup_completions'][0]['answered_question_ids'],[])
             self.assertEqual(len(ext['followup_completions'][0]['skipped_question_ids']),2)
 
+    def test_preview_validation_and_export_with_advancing_clock(self):
+        from datetime import datetime,timedelta,timezone
+        with tempfile.TemporaryDirectory() as directory:
+            app,identity,fp,_,_=setup(directory)
+            tick=[datetime(2026,11,3,12,tzinfo=timezone.utc)]
+            def clock():
+                tick[0]+=timedelta(milliseconds=1)
+                return tick[0].isoformat(timespec='milliseconds').replace('+00:00','Z')
+            app.clock=clock;app.ingest(history());interview(app);validate(export(app,identity,fp))
+
 if __name__=='__main__':unittest.main()

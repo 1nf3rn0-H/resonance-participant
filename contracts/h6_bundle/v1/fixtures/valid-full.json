@@ -3,13 +3,14 @@
     "format": "resonance-h6-bundle",
     "schema_version": "1.0.0",
     "protocol_version": "offline-retro-h6-1.0.0-pilot",
+    "temporal_mode": "RETROSPECTIVE_REPLAY",
     "bundle_id": "h6-fixture-full",
     "generated_at": "2026-10-30T12:10:00.000Z",
     "core_integrity_hash": "80859672a7ab37b5d828885c8697e332cb963e41c03cf957cb4feafea55b8fd6",
-    "contract_release_hash": "6cdefd78e3c5b08475254a99a008d293ec2c61ec331dabeaaf51967329aeb986",
+    "contract_release_hash": "ad5d979107328bf15d572e813e4319a2553d7771edc616cf0815960d61e49ad9",
     "question_bank_hash": "4cda7254791b476c2d6e4cb3c7230f854fee9545604b14c9d206c29a9a81e6c9",
     "content_hash": "e5604bf2770f7383e23685d7d2d15dd609f42d6e1c6820ceaabc35aa120eb9b2",
-    "integrity_hash": "6e6ddb07f60cb42ad54dc444535574dbac69689e2b360b3cb568cc748f3cbb11"
+    "integrity_hash": "4fb8833f891f794123866233556a8186bf86126196b04702e70f429b24c3cfcf"
   },
   "core": {
     "manifest": {

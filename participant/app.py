@@ -291,8 +291,8 @@ class ParticipantApp(H6Mixin):
             checked=deepcopy(document)
             if self.store.get(c,'h6_options'):
                 from contracts.h6_bundle.v1.contract import refresh,validate as validate_h6
-                checked['core']['export_authorization']['explicitly_confirmed']=True;seal(checked['core'])
-                checked['export_authorization']['explicitly_confirmed']=True;refresh(checked);validate_h6(checked)
+                checked['core']['export_authorization'].update(explicitly_confirmed=True,confirmed_at=self.clock());seal(checked['core'])
+                checked['export_authorization'].update(explicitly_confirmed=True,confirmed_at=self.clock());refresh(checked);validate_h6(checked)
             else:checked['export_authorization']['explicitly_confirmed']=True;seal(checked);validate(checked)
             from contracts.h6_bundle.v1.transport import encode_any,decode_any
             decode_any(encode_any(checked))

@@ -135,7 +135,7 @@ def _validate(bundle):
 
 def wrap(core,extension,stamp):
     from .release import verify_release
-    bundle={'manifest':{'format':'resonance-h6-bundle','schema_version':'1.0.0','protocol_version':PROTOCOL,'bundle_id':core['manifest']['bundle_id'],
+    bundle={'manifest':{'format':'resonance-h6-bundle','schema_version':'1.0.0','protocol_version':PROTOCOL,'temporal_mode':'RETROSPECTIVE_REPLAY','bundle_id':core['manifest']['bundle_id'],
         'generated_at':stamp,'core_integrity_hash':core['manifest']['integrity_hash'],'contract_release_hash':verify_release(),'question_bank_hash':sha256(BANK),'content_hash':'0'*64,'integrity_hash':'0'*64},
         'core':core,'extension':extension,'export_preview':{'presented_at':stamp,'notice':NOTICE,'core_integrity_hash':core['manifest']['integrity_hash'],'extension_hash':sha256(extension),'sections':[]},
         'export_authorization':{'explicitly_confirmed':core['export_authorization']['explicitly_confirmed'],'confirmed_at':core['export_authorization']['confirmed_at'],
